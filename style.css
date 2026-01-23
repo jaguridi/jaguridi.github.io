@@ -1,0 +1,374 @@
+/* ===================================
+   Academic Website - Jose A. Guridi
+   Simple & Elegant Theme
+   =================================== */
+
+:root {
+    --color-text: #1a2a3a;
+    --color-text-light: #4a6070;
+    --color-accent: #2563a0;
+    --color-accent-light: #3b7bbf;
+    --color-bg: #ffffff;
+    --color-white: #ffffff;
+    --color-border: #d8e2ec;
+    --color-news-date: #1d5a8a;
+    --max-width: 780px;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 100;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-name {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Main Content */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.hero-photo {
+    flex-shrink: 0;
+}
+
+.hero-photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-border);
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--color-text);
+}
+
+.hero .subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.1rem;
+}
+
+.hero .affiliation {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.social-links a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+/* Sections */
+.section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+/* About */
+.about-content p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.committee {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+}
+
+/* News Section */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.news-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-news-date);
+    white-space: nowrap;
+    min-width: 5.5rem;
+}
+
+.news-text {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.news-text strong {
+    font-weight: 600;
+}
+
+/* Publications */
+.pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.pub-item {
+    padding-left: 1rem;
+    border-left: 3px solid var(--color-border);
+}
+
+.pub-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.02rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-text);
+}
+
+.pub-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.pub-title a:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+.pub-authors {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.2rem;
+}
+
+.pub-venue {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+.pub-year {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.pub-category {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-text);
+}
+
+.pub-category:first-child {
+    margin-top: 0;
+}
+
+.view-all {
+    display: inline-block;
+    margin-top: 1.8rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.view-all:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+/* Contact */
+.contact-info {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.contact-info a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+/* Footer */
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .hero {
+        padding: 2.5rem 0 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-photo img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .news-item {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .news-date {
+        min-width: auto;
+    }
+}
