@@ -332,6 +332,80 @@ main {
     border-bottom-color: var(--color-accent);
 }
 
+/* Projects */
+.section-intro {
+    margin-bottom: 2rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.project-item {
+    padding-left: 1rem;
+    border-left: 3px solid var(--color-accent);
+}
+
+.project-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.project-outputs {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+}
+
+.project-outputs-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.project-outputs ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.3rem;
+}
+
+.project-outputs li {
+    padding: 0.2rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.project-outputs li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--color-text-light);
+}
+
+.project-outputs a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.project-outputs a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
 /* Contact */
 .contact-info {
     font-size: 1rem;
