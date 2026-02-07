@@ -44,6 +44,47 @@
             </div>
         </section>
 
+        <!-- RECRUITMENT CALLOUT START - Managed by Claude Code -->
+        <!--
+            CLAUDE CODE MANAGEMENT INSTRUCTIONS:
+            - "Add recruitment box for [X]": Update CONFIG below, set ENABLED to true, change DISMISS_KEY to new study name
+            - "Turn off recruitment box": Set ENABLED to false
+            - "Update recruitment box": Modify the relevant CONFIG fields
+            - Always update both index.html and es/index.html
+            - When changing studies, update DISMISS_KEY so returning visitors see the new callout
+
+            CONFIG:
+              ENABLED: true
+              DISMISS_KEY: "recruit-ai-qualitative-research"
+              STUDY: "AI in Qualitative Research"
+              TITLE: "Participate in AI & Qualitative Research Study"
+              DESCRIPTION: "I'm seeking participants for a study on AI use in qualitative research. If you use AI tools in your qualitative research workflow, I'd love to hear from you."
+              BUTTON_1: "Take Survey" | #SURVEY_URL_PLACEHOLDER
+              BUTTON_2: "Contact for Interview" | mailto:jg2222@cornell.edu?subject=AI%20Qualitative%20Research%20Study
+        -->
+        <div class="recruitment-callout" id="recruitment-callout">
+            <button class="recruitment-dismiss" onclick="dismissRecruitment()" aria-label="Dismiss">&times;</button>
+            <div class="recruitment-callout-title">Participate in AI &amp; Qualitative Research Study</div>
+            <p class="recruitment-callout-desc">I'm seeking participants for a study on AI use in qualitative research. If you use AI tools in your qualitative research workflow, I'd love to hear from you.</p>
+            <div class="recruitment-callout-buttons">
+                <a href="#SURVEY_URL_PLACEHOLDER" class="recruitment-btn-primary" target="_blank">Take Survey</a>
+                <a href="mailto:jg2222@cornell.edu?subject=AI%20Qualitative%20Research%20Study" class="recruitment-btn-secondary">Contact for Interview</a>
+            </div>
+        </div>
+        <script>
+        (function() {
+            var key = 'recruit-ai-qualitative-research';
+            if (localStorage.getItem(key) === 'dismissed') {
+                document.getElementById('recruitment-callout').style.display = 'none';
+            }
+            window.dismissRecruitment = function() {
+                localStorage.setItem(key, 'dismissed');
+                document.getElementById('recruitment-callout').style.display = 'none';
+            };
+        })();
+        </script>
+        <!-- RECRUITMENT CALLOUT END -->
+
         <!-- About Section -->
         <section id="about" class="section">
             <h2>About</h2>

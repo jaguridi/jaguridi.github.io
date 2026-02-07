@@ -44,6 +44,40 @@
             </div>
         </section>
 
+        <!-- RECRUITMENT CALLOUT START - Managed by Claude Code -->
+        <!--
+            CONFIG:
+              ENABLED: true
+              DISMISS_KEY: "recruit-ai-qualitative-research"
+              STUDY: "IA en Investigacion Cualitativa"
+              TITLE: "Participa en un Estudio sobre IA e Investigacion Cualitativa"
+              DESCRIPTION: "Estoy buscando participantes para un estudio sobre el uso de IA en investigacion cualitativa. Si usas herramientas de IA en tu trabajo de investigacion cualitativa, me encantaria saber de ti."
+              BUTTON_1: "Responder Encuesta" | #SURVEY_URL_PLACEHOLDER
+              BUTTON_2: "Contacto para Entrevista" | mailto:jg2222@cornell.edu?subject=Estudio%20IA%20Investigacion%20Cualitativa
+        -->
+        <div class="recruitment-callout" id="recruitment-callout">
+            <button class="recruitment-dismiss" onclick="dismissRecruitment()" aria-label="Cerrar">&times;</button>
+            <div class="recruitment-callout-title">Participa en un Estudio sobre IA e Investigaci&oacute;n Cualitativa</div>
+            <p class="recruitment-callout-desc">Estoy buscando participantes para un estudio sobre el uso de IA en investigaci&oacute;n cualitativa. Si usas herramientas de IA en tu trabajo de investigaci&oacute;n cualitativa, me encantar&iacute;a saber de ti.</p>
+            <div class="recruitment-callout-buttons">
+                <a href="#SURVEY_URL_PLACEHOLDER" class="recruitment-btn-primary" target="_blank">Responder Encuesta</a>
+                <a href="mailto:jg2222@cornell.edu?subject=Estudio%20IA%20Investigacion%20Cualitativa" class="recruitment-btn-secondary">Contacto para Entrevista</a>
+            </div>
+        </div>
+        <script>
+        (function() {
+            var key = 'recruit-ai-qualitative-research';
+            if (localStorage.getItem(key) === 'dismissed') {
+                document.getElementById('recruitment-callout').style.display = 'none';
+            }
+            window.dismissRecruitment = function() {
+                localStorage.setItem(key, 'dismissed');
+                document.getElementById('recruitment-callout').style.display = 'none';
+            };
+        })();
+        </script>
+        <!-- RECRUITMENT CALLOUT END -->
+
         <!-- About Section -->
         <section id="sobre" class="section">
             <h2>Sobre mi</h2>
