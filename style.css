@@ -296,6 +296,28 @@ main {
     color: var(--color-text-light);
 }
 
+.pub-links {
+    margin-top: 0.3rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.pub-links a {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.pub-links a:hover {
+    border-color: var(--color-accent);
+    background-color: #f0f7ff;
+}
+
 .pub-year {
     font-size: 0.85rem;
     color: var(--color-accent);
