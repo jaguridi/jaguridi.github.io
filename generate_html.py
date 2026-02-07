@@ -125,12 +125,10 @@ def render_pub_item(pub, lang="en"):
     venue = pub.get("venue_es", pub["venue"]) if lang == "es" else pub["venue"]
     lines.append(f'                    <p class="pub-venue">{esc(venue)}</p>')
 
-    if pub["publication_type"] == "workshop":
-        abstract_href = html.escape(pub["abstract_link"] or "#")
-        slides_href = html.escape(pub["slides_link"] or "#")
+    if pub["publication_type"] == "workshop" and pub.get("slides_link"):
+        slides_href = html.escape(pub["slides_link"])
         lines.append(
             f'                    <p class="pub-links">'
-            f'<a href="{abstract_href}">Abstract</a> '
             f'<a href="{slides_href}">Slides</a></p>'
         )
 

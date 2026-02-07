@@ -76,10 +76,8 @@ def main():
 
     url = prompt("URL (DOI or link)", required=False)
 
-    abstract_link = None
     slides_link = None
     if pub_type == "workshop":
-        abstract_link = prompt("Abstract link", required=False)
         slides_link = prompt("Slides link", required=False)
 
     pub = {
@@ -89,7 +87,6 @@ def main():
         "year": year,
         "publication_type": pub_type,
         "url": url,
-        "abstract_link": abstract_link,
         "slides_link": slides_link,
     }
     if venue_es:

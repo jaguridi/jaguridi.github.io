@@ -6,7 +6,6 @@
     "year": 2025,
     "publication_type": "journal",
     "url": "https://dl.acm.org/doi/10.1145/3656588",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -16,7 +15,6 @@
     "year": 2020,
     "publication_type": "journal",
     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0048733319302173",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -26,7 +24,6 @@
     "year": 2026,
     "publication_type": "archival-conference",
     "url": "https://arxiv.org/abs/2602.02740",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -36,7 +33,6 @@
     "year": 2025,
     "publication_type": "archival-conference",
     "url": "https://dl.acm.org/doi/10.1145/3710912",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -46,7 +42,6 @@
     "year": 2025,
     "publication_type": "archival-conference",
     "url": "https://dl.acm.org/doi/10.1145/3711091",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -56,7 +51,6 @@
     "year": 2024,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -66,7 +60,6 @@
     "year": 2023,
     "publication_type": "workshop",
     "url": "https://doi.org/10.1145/3584931.3607004",
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -76,7 +69,6 @@
     "year": 2025,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -86,7 +78,6 @@
     "year": 2025,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -96,7 +87,6 @@
     "year": 2023,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -106,7 +96,6 @@
     "year": 2022,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -116,7 +105,6 @@
     "year": 2017,
     "publication_type": "workshop",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -127,7 +115,6 @@
     "year": null,
     "publication_type": "book-chapter",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -138,7 +125,6 @@
     "year": null,
     "publication_type": "book-chapter",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -149,7 +135,6 @@
     "year": 2025,
     "publication_type": "book-chapter",
     "url": null,
-    "abstract_link": null,
     "slides_link": null
   },
   {
@@ -160,7 +145,6 @@
     "year": 2025,
     "publication_type": "policy-report",
     "url": "https://publications.iadb.org/es/recomendaciones-para-la-implementacion-de-sandboxes-regulatorios-de-ia",
-    "abstract_link": null,
     "slides_link": null
   }
 ]

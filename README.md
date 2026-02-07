@@ -50,7 +50,6 @@ This regenerates both `publications.html` and `es/publications.html`.
   "year": 2025,
   "publication_type": "journal",
   "url": "https://doi.org/...",
-  "abstract_link": null,
   "slides_link": null
 }
 ```
@@ -58,9 +57,13 @@ This regenerates both `publications.html` and `es/publications.html`.
 **Notes:**
 - `year`: Use `null` for forthcoming publications (they sort to the top)
 - `venue_es`: Only needed when the Spanish venue differs (e.g., book chapters with "In:" vs "En:", or translated publisher names)
-- `abstract_link` / `slides_link`: Only rendered for `workshop` type entries. Use `null` for placeholder `#` links.
-- `url`: The main DOI or paper link. Use `null` if no link available.
+- `url`: The main paper/DOI link. Makes the title clickable for all types. Use `null` if no link available.
+- `slides_link`: Only rendered for `workshop` type entries. Shows a `[Slides]` button below the venue. Use `null` to omit.
 - Publications are sorted by year descending within each section.
+
+**How links render by type:**
+- **journal / archival-conference / book-chapter / policy-report**: Title links to `url`. No extra buttons.
+- **workshop**: Title links to `url` (abstract/paper). Separate `[Slides]` button if `slides_link` is set.
 
 ## Example: Adding a JSON Entry Manually
 
@@ -72,7 +75,6 @@ This regenerates both `publications.html` and `es/publications.html`.
   "year": 2026,
   "publication_type": "archival-conference",
   "url": "https://doi.org/10.1145/example",
-  "abstract_link": null,
   "slides_link": null
 }
 ```
