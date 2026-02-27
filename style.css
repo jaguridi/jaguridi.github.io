@@ -386,6 +386,29 @@ main {
     color: var(--color-text);
 }
 
+.project-layer {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin: 2rem 0 0.5rem 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.project-layer:first-of-type {
+    margin-top: 0;
+}
+
+.project-layer-desc {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
 .project-desc {
     font-size: 0.95rem;
     color: var(--color-text);
