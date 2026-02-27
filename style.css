@@ -773,17 +773,17 @@ button:focus-visible {
     :root {
         --color-text: #e0e8f0;
         --color-text-light: #a0b4c8;
-        --color-accent: #5a9fd4;
-        --color-accent-light: #7ab8e8;
+        --color-accent: #e8937a;
+        --color-accent-light: #f0a892;
         --color-bg: #0f1419;
         --color-white: #0f1419;
         --color-border: #2a3a4a;
-        --color-news-date: #6ab0e0;
+        --color-news-date: #e8937a;
         --color-border-subtle: #1a2a3a;
-        --color-accent-bg: #1a2a3a;
-        --color-recruitment-bg-start: #1a2a3a;
-        --color-recruitment-bg-end: #1e3044;
-        --color-recruitment-border: #2a4a6a;
+        --color-accent-bg: #2a1e1a;
+        --color-recruitment-bg-start: #2a1e1a;
+        --color-recruitment-bg-end: #2e221e;
+        --color-recruitment-border: #5a3a2a;
     }
 
     .recruitment-callout {
