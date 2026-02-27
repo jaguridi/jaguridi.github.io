@@ -11,9 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
     <header>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="/index.html" class="nav-name">Jose A. Guridi</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="/index.html#about">About</a>
                 <a href="/news.html">News</a>
@@ -25,7 +29,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" style="text-align: center; padding: 6rem 0;">
             <h2 style="font-size: 4rem; margin-bottom: 0.5rem;">404</h2>
             <p style="font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 2rem;">The page you're looking for doesn't exist.</p>
@@ -36,5 +40,27 @@
     <footer>
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
+
+    <script>
+    (function() {
+        var toggle = document.querySelector('.nav-toggle');
+        var navLinks = document.querySelector('.nav-links');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !expanded);
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('open');
+                });
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

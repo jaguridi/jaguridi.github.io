@@ -12,6 +12,11 @@
     --color-white: #ffffff;
     --color-border: #d8e2ec;
     --color-news-date: #1d5a8a;
+    --color-border-subtle: #f0f0f0;
+    --color-accent-bg: #f0f7ff;
+    --color-recruitment-bg-start: #eef4fb;
+    --color-recruitment-bg-end: #f0f7ff;
+    --color-recruitment-border: #c5d9ed;
     --max-width: 780px;
     --font-serif: 'Source Serif 4', Georgia, serif;
     --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -228,7 +233,7 @@ main {
     gap: 1.2rem;
     align-items: baseline;
     padding: 0.6rem 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .news-item:last-child {
@@ -316,7 +321,7 @@ main {
 
 .pub-links a:hover {
     border-color: var(--color-accent);
-    background-color: #f0f7ff;
+    background-color: var(--color-accent-bg);
 }
 
 .pub-year {
@@ -460,8 +465,8 @@ footer {
 .recruitment-callout {
     margin: 2rem 0 0;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #eef4fb 0%, #f0f7ff 100%);
-    border: 1px solid #c5d9ed;
+    background: linear-gradient(135deg, var(--color-recruitment-bg-start) 0%, var(--color-recruitment-bg-end) 100%);
+    border: 1px solid var(--color-recruitment-border);
     border-left: 4px solid var(--color-accent);
     border-radius: 6px;
     position: relative;
@@ -751,28 +756,32 @@ button:focus-visible {
         --color-white: #0f1419;
         --color-border: #2a3a4a;
         --color-news-date: #6ab0e0;
-    }
-
-    header {
-        background: #0f1419;
-    }
-
-    .news-item {
-        border-bottom-color: #1a2a3a;
+        --color-border-subtle: #1a2a3a;
+        --color-accent-bg: #1a2a3a;
+        --color-recruitment-bg-start: #1a2a3a;
+        --color-recruitment-bg-end: #1e3044;
+        --color-recruitment-border: #2a4a6a;
     }
 
     .recruitment-callout {
-        background: linear-gradient(135deg, #1a2a3a 0%, #1e3044 100%);
-        border-color: #2a4a6a;
         border-left-color: var(--color-accent);
-    }
-
-    .pub-links a:hover {
-        background-color: #1a2a3a;
     }
 
     .pub-filter-btn {
         background: #0f1419;
+    }
+
+    .pub-filter-btn.active {
+        color: #ffffff;
+    }
+
+    .recruitment-btn-primary,
+    .recruitment-btn-primary:hover {
+        color: #ffffff;
+    }
+
+    .recruitment-btn-secondary:hover {
+        color: #ffffff;
     }
 
     img {
