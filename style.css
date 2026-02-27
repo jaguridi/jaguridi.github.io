@@ -325,19 +325,19 @@ main {
     font-weight: 600;
 }
 
+.pub-section + .pub-section {
+    margin-top: 2.5rem;
+}
+
 .pub-category {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     font-weight: 600;
-    margin-top: 2.5rem;
+    margin-top: 0;
     margin-bottom: 1.2rem;
     padding-bottom: 0.4rem;
     border-bottom: 2px solid var(--color-accent);
     color: var(--color-text);
-}
-
-.pub-category:first-child {
-    margin-top: 0;
 }
 
 .view-all {
@@ -545,7 +545,7 @@ footer {
     z-index: 200;
     padding: 0.5rem 1rem;
     background: var(--color-accent);
-    color: var(--color-white);
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
@@ -631,33 +631,52 @@ button:focus-visible {
     display: none;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    body {
-        font-size: 16px;
-    }
-
+/* Responsive - Tablet */
+@media (max-width: 780px) {
     .nav-toggle {
         display: block;
     }
 
     nav {
-        flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.8rem;
-        align-items: center;
     }
 
     .nav-links {
-        display: none;
-        width: 100%;
+        display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-        padding-top: 0.5rem;
+        width: 100%;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding-top: 0;
     }
 
     .nav-links.open {
-        display: flex;
+        max-height: 400px;
+        padding-top: 0.5rem;
+    }
+
+    .nav-links a,
+    .nav-links .lang-switch {
+        padding: 0.6rem 0;
+        font-size: 1rem;
+    }
+
+    .lang-switch {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+        border-top: 1px solid var(--color-border);
+        padding-top: 0.8rem;
+        margin-top: 0.2rem;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
     }
 
     .hero {
@@ -708,11 +727,16 @@ button:focus-visible {
 
     .pub-filters {
         gap: 0.4rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.3rem;
     }
 
     .pub-filter-btn {
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
+        flex-shrink: 0;
     }
 }
 
@@ -740,6 +764,7 @@ button:focus-visible {
     .recruitment-callout {
         background: linear-gradient(135deg, #1a2a3a 0%, #1e3044 100%);
         border-color: #2a4a6a;
+        border-left-color: var(--color-accent);
     }
 
     .pub-links a:hover {

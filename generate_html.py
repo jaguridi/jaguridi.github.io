@@ -144,6 +144,13 @@ FOOTER = """\
                 toggle.classList.toggle('active');
                 navLinks.classList.toggle('open');
             });
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('open');
+                });
+            });
         }
 
         // Publication filters
