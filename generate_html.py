@@ -10,13 +10,34 @@ JSON_PATH = SCRIPT_DIR / "publications.json"
 EN_OUTPUT = SCRIPT_DIR / "publications.html"
 ES_OUTPUT = SCRIPT_DIR / "es" / "publications.html"
 
-# Section order and display names
+# Section order, display names, and filter data-category slugs
 SECTIONS = [
-    ("journal", "Peer-Reviewed Journal Articles", "Articulos en Revistas con Revision de Pares"),
-    ("archival-conference", "Archival Conference Papers", "Articulos de Conferencia Archivados"),
-    ("workshop", "Workshop Papers and Extended Abstracts", "Articulos de Taller y Resumenes Extendidos"),
-    ("book-chapter", "Book Chapters", "Capitulos de Libro"),
-    ("policy-report", "Policy Reports", "Informes de Politica Publica"),
+    ("journal", "Peer-Reviewed Journal Articles", "Articulos en Revistas con Revision de Pares", "journals"),
+    ("archival-conference", "Archival Conference Papers", "Articulos de Conferencia Archivados", "conferences"),
+    ("workshop", "Workshop Papers and Extended Abstracts", "Articulos de Taller y Resumenes Extendidos", "workshops"),
+    ("book-chapter", "Book Chapters", "Capitulos de Libro", "books"),
+    ("policy-report", "Policy Reports", "Informes de Politica Publica", "reports"),
+]
+
+# Filter button labels (EN and ES)
+FILTER_BUTTONS_EN = [
+    ("all", "All"),
+    ("working-papers", "Working Papers"),
+    ("journals", "Journals"),
+    ("conferences", "Conferences"),
+    ("workshops", "Workshops"),
+    ("books", "Books"),
+    ("reports", "Reports"),
+]
+
+FILTER_BUTTONS_ES = [
+    ("all", "Todas"),
+    ("working-papers", "En progreso"),
+    ("journals", "Revistas"),
+    ("conferences", "Conferencias"),
+    ("workshops", "Talleres"),
+    ("books", "Libros"),
+    ("reports", "Informes"),
 ]
 
 EN_HEADER = """\
@@ -26,28 +47,37 @@ EN_HEADER = """\
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications | Jose A. Guridi</title>
+    <meta name="description" content="Academic publications by Jose A. Guridi: journal articles, conference papers, book chapters, and policy reports on AI governance, HCI, and CSCW.">
+    <link rel="canonical" href="https://jaguridi.github.io/publications.html">
+    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html">
+    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
     <header>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="news.html">News</a>
                 <a href="publications.html">Publications</a>
                 <a href="projects.html">Projects</a>
-                <a href="CV/Jose_Guridi_CV.pdf" target="_blank">CV</a>
+                <a href="CV/Jose_Guridi_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                 <a href="index.html#contact">Contact</a>
                 <span class="lang-switch"><span class="active-lang">EN</span> / <a href="es/publications.html">ES</a></span>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" style="border-bottom: none;">
             <h2>Publications</h2>
 """
@@ -59,28 +89,37 @@ ES_HEADER = """\
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicaciones | Jose A. Guridi</title>
+    <meta name="description" content="Publicaciones acad&eacute;micas de Jose A. Guridi: art&iacute;culos de revista, conferencias, cap&iacute;tulos de libro e informes de pol&iacute;tica sobre gobernanza de IA, HCI y CSCW.">
+    <link rel="canonical" href="https://jaguridi.github.io/es/publications.html">
+    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html">
+    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Ir al contenido</a>
     <header>
-        <nav>
+        <nav aria-label="Navegaci&oacute;n principal">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
+            <button class="nav-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html#sobre">Sobre mi</a>
                 <a href="news.html">Novedades</a>
                 <a href="publications.html">Publicaciones</a>
                 <a href="projects.html">Proyectos</a>
-                <a href="../CV/Jose_Guridi_CV.pdf" target="_blank">CV</a>
+                <a href="../CV/Jose_Guridi_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                 <a href="index.html#contacto">Contacto</a>
                 <span class="lang-switch"><a href="../publications.html">EN</a> / <span class="active-lang">ES</span></span>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" style="border-bottom: none;">
             <h2>Publicaciones</h2>
 """
@@ -92,6 +131,40 @@ FOOTER = """\
     <footer>
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
+
+    <script>
+    (function() {
+        // Hamburger menu
+        var toggle = document.querySelector('.nav-toggle');
+        var navLinks = document.querySelector('.nav-links');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !expanded);
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+        }
+
+        // Publication filters
+        var filterBtns = document.querySelectorAll('.pub-filter-btn');
+        var sections = document.querySelectorAll('.pub-section');
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = btn.getAttribute('data-filter');
+                filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                sections.forEach(function(s) {
+                    if (filter === 'all' || s.getAttribute('data-category') === filter) {
+                        s.removeAttribute('hidden');
+                    } else {
+                        s.setAttribute('hidden', '');
+                    }
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
 """
@@ -113,7 +186,7 @@ def render_pub_item(pub, lang="en"):
     if pub.get("url"):
         lines.append(
             f'                    <p class="pub-title">'
-            f'<a href="{html.escape(pub["url"])}" target="_blank">'
+            f'<a href="{html.escape(pub["url"])}" target="_blank" rel="noopener noreferrer">'
             f'{title_escaped}</a></p>'
         )
     else:
@@ -136,12 +209,45 @@ def render_pub_item(pub, lang="en"):
     return "\n".join(lines)
 
 
+def render_filter_buttons(lang="en"):
+    """Render the publication filter buttons toolbar."""
+    buttons = FILTER_BUTTONS_EN if lang == "en" else FILTER_BUTTONS_ES
+    aria_label = "Filter publications" if lang == "en" else "Filtrar publicaciones"
+    lines = [f'            <div class="pub-filters" role="toolbar" aria-label="{aria_label}">']
+    for i, (slug, label) in enumerate(buttons):
+        active = ' active' if slug == 'all' else ''
+        lines.append(
+            f'                <button class="pub-filter-btn{active}" '
+            f'data-filter="{slug}">{html.escape(label)}</button>'
+        )
+    lines.append('            </div>\n')
+    return "\n".join(lines)
+
+
 def generate_page(pubs, lang="en"):
     """Generate a full publications HTML page."""
     header = EN_HEADER if lang == "en" else ES_HEADER
     parts = [header]
 
-    for pub_type, en_label, es_label in SECTIONS:
+    # Filter buttons
+    parts.append(render_filter_buttons(lang))
+
+    # Working papers (special: not in SECTIONS, uses "working-paper" type)
+    wp_pubs = [p for p in pubs if p["publication_type"] == "working-paper"]
+    wp_pubs.sort(key=sort_key)
+    if wp_pubs:
+        wp_label = "Working Papers" if lang == "en" else "Documentos de Trabajo"
+        parts.append(f'            <div class="pub-section" data-category="working-papers">')
+        parts.append(f'            <h3 class="pub-category">{html.escape(wp_label)}</h3>')
+        parts.append('            <div class="pub-list">')
+        for i, pub in enumerate(wp_pubs):
+            if i > 0:
+                parts.append("")
+            parts.append(render_pub_item(pub, lang))
+        parts.append("            </div>")
+        parts.append("            </div>\n")
+
+    for pub_type, en_label, es_label, filter_slug in SECTIONS:
         section_pubs = [p for p in pubs if p["publication_type"] == pub_type]
         section_pubs.sort(key=sort_key)
 
@@ -149,6 +255,7 @@ def generate_page(pubs, lang="en"):
             continue
 
         label = en_label if lang == "en" else es_label
+        parts.append(f'            <div class="pub-section" data-category="{filter_slug}">')
         parts.append(f'            <h3 class="pub-category">{html.escape(label)}</h3>')
         parts.append('            <div class="pub-list">')
 
@@ -157,6 +264,7 @@ def generate_page(pubs, lang="en"):
                 parts.append("")
             parts.append(render_pub_item(pub, lang))
 
+        parts.append("            </div>")
         parts.append("            </div>\n")
 
     parts.append(FOOTER)

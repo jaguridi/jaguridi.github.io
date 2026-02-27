@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Jose A. Guridi</title>
+    <meta name="description" content="Research projects by Jose A. Guridi on AI governance, participatory policymaking, scaling participation with AI, and qualitative research methods.">
+    <link rel="canonical" href="https://jaguridi.github.io/projects.html">
+    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/projects.html">
+    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/projects.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
     <header>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html#about">About</a>
                 <a href="news.html">News</a>
                 <a href="publications.html">Publications</a>
                 <a href="projects.html">Projects</a>
-                <a href="CV/Jose_Guridi_CV.pdf" target="_blank">CV</a>
+                <a href="CV/Jose_Guridi_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                 <a href="index.html#contact">Contact</a>
                 <span class="lang-switch"><span class="active-lang">EN</span> / <a href="es/projects.html">ES</a></span>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" style="border-bottom: none;">
             <h2>Research Projects</h2>
             <p class="section-intro">Here you can find the research projects I am currently working on and some ideas I intend to pursue.</p>
@@ -37,7 +46,7 @@
                     <div class="project-outputs">
                         <span class="project-outputs-label">Related:</span>
                         <ul>
-                            <li><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank">Thoughtful Adoption of NLP for Civic Participation</a> &mdash; PACM HCI, 2025</li>
+                            <li><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank" rel="noopener noreferrer">Thoughtful Adoption of NLP for Civic Participation</a> &mdash; PACM HCI, 2025</li>
                             <li>Addressing the Paradoxical Nature of Emerging Technologies in Transformative Policies &mdash; Atlanta Conference on SIP, 2025</li>
                             <li>Transitioning between Gimmicky and Adaptive approaches to AI Policy &mdash; Atlanta Conference on SIP, 2023</li>
                         </ul>
@@ -50,7 +59,7 @@
                     <div class="project-outputs">
                         <span class="project-outputs-label">Related:</span>
                         <ul>
-                            <li><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank">Thoughtful Adoption of NLP for Civic Participation</a> &mdash; PACM HCI, 2025</li>
+                            <li><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank" rel="noopener noreferrer">Thoughtful Adoption of NLP for Civic Participation</a> &mdash; PACM HCI, 2025</li>
                             <li>Supporting Participation Processes Using NLP in Constrained Resources Settings &mdash; EGOV-CeDEM-ePart, 2024</li>
                             <li>Using LLMs to Analyze Incident Reporting and Support Policymaking &mdash; Atlanta Conference on SIP, 2025</li>
                         </ul>
@@ -63,8 +72,8 @@
                     <div class="project-outputs">
                         <span class="project-outputs-label">Related:</span>
                         <ul>
-                            <li><a href="https://dl.acm.org/doi/10.1145/3710912" target="_blank">From Fake Perfects to Conversational Imperfects</a> &mdash; PACM HCI, 2025</li>
-                            <li><a href="https://dl.acm.org/doi/10.1145/3656588" target="_blank">Image Generative AI to Design Public Spaces</a> &mdash; Digital Government, 2025</li>
+                            <li><a href="https://dl.acm.org/doi/10.1145/3710912" target="_blank" rel="noopener noreferrer">From Fake Perfects to Conversational Imperfects</a> &mdash; PACM HCI, 2025</li>
+                            <li><a href="https://dl.acm.org/doi/10.1145/3656588" target="_blank" rel="noopener noreferrer">Image Generative AI to Design Public Spaces</a> &mdash; Digital Government, 2025</li>
                         </ul>
                     </div>
                 </div>
@@ -91,5 +100,20 @@
     <footer>
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
+
+    <script>
+    (function() {
+        var toggle = document.querySelector('.nav-toggle');
+        var navLinks = document.querySelector('.nav-links');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !expanded);
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+        }
+    })();
+    </script>
 </body>
 </html>

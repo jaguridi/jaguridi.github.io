@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jaguridi.github.io/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/index.html"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/news.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/projects.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/index.html"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/es/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/news.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/es/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaguridi.github.io/es/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/projects.html"/>
+    <priority>0.7</priority>
+  </url>
+</urlset>

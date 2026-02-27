@@ -4,76 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicaciones | Jose A. Guridi</title>
+    <meta name="description" content="Publicaciones acad&eacute;micas de Jose A. Guridi: art&iacute;culos de revista, conferencias, cap&iacute;tulos de libro e informes de pol&iacute;tica sobre gobernanza de IA, HCI y CSCW.">
+    <link rel="canonical" href="https://jaguridi.github.io/es/publications.html">
+    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html">
+    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Ir al contenido</a>
     <header>
-        <nav>
+        <nav aria-label="Navegaci&oacute;n principal">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
+            <button class="nav-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html#sobre">Sobre mi</a>
                 <a href="news.html">Novedades</a>
                 <a href="publications.html">Publicaciones</a>
                 <a href="projects.html">Proyectos</a>
-                <a href="../CV/Jose_Guridi_CV.pdf" target="_blank">CV</a>
+                <a href="../CV/Jose_Guridi_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                 <a href="index.html#contacto">Contacto</a>
                 <span class="lang-switch"><a href="../publications.html">EN</a> / <span class="active-lang">ES</span></span>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="section" style="border-bottom: none;">
             <h2>Publicaciones</h2>
 
+            <div class="pub-filters" role="toolbar" aria-label="Filtrar publicaciones">
+                <button class="pub-filter-btn active" data-filter="all">Todas</button>
+                <button class="pub-filter-btn" data-filter="working-papers">En progreso</button>
+                <button class="pub-filter-btn" data-filter="journals">Revistas</button>
+                <button class="pub-filter-btn" data-filter="conferences">Conferencias</button>
+                <button class="pub-filter-btn" data-filter="workshops">Talleres</button>
+                <button class="pub-filter-btn" data-filter="books">Libros</button>
+                <button class="pub-filter-btn" data-filter="reports">Informes</button>
+            </div>
+
+            <div class="pub-section" data-category="working-papers">
             <h3 class="pub-category">Documentos de Trabajo</h3>
             <div class="pub-list">
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6253395" target="_blank">Paradoxical Strategies for Emerging Technology Governance</a></p>
+                    <p class="pub-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6253395" target="_blank" rel="noopener noreferrer">Paradoxical Strategies for Emerging Technology Governance</a></p>
                     <p class="pub-authors">Jose A. Guridi, Julio Pertuze, Clara Caffrey, Cristobal Cheyre</p>
                     <p class="pub-venue">SSRN, 2026. En revisión.</p>
                 </div>
             </div>
+            </div>
 
+            <div class="pub-section" data-category="journals">
             <h3 class="pub-category">Articulos en Revistas con Revision de Pares</h3>
             <div class="pub-list">
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3656588" target="_blank">Image Generative AI to Design Public Spaces: a Reflection of how AI Could Improve Co-Design of Public Parks</a></p>
+                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3656588" target="_blank" rel="noopener noreferrer">Image Generative AI to Design Public Spaces: a Reflection of how AI Could Improve Co-Design of Public Parks</a></p>
                     <p class="pub-authors">Jose A. Guridi, Cristobal Cheyre, Maria Goula, Duarte Santo, Lee Humphreys, Aishwarya Shankar, Achilleas Souras</p>
                     <p class="pub-venue">Digital Government: Research and Practice, 6(1), 2025</p>
                 </div>
 
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0048733319302173" target="_blank">Natural laboratories as policy instruments for technological learning and institutional capacity building: The case of Chile's astronomy cluster</a></p>
+                    <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0048733319302173" target="_blank" rel="noopener noreferrer">Natural laboratories as policy instruments for technological learning and institutional capacity building: The case of Chile's astronomy cluster</a></p>
                     <p class="pub-authors">Jose A. Guridi, Julio A. Pertuze, Sebastian M. Pfotenhauer</p>
                     <p class="pub-venue">Research Policy, 49(2), 2020</p>
                 </div>
             </div>
+            </div>
 
+            <div class="pub-section" data-category="conferences">
             <h3 class="pub-category">Articulos de Conferencia Archivados</h3>
             <div class="pub-list">
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://arxiv.org/abs/2602.02740" target="_blank">Framing Responsible Design of AI for Mental Well-Being: AI as Primary Care, Nutritional Supplement, or Yoga Instructor?</a></p>
+                    <p class="pub-title"><a href="https://arxiv.org/abs/2602.02740" target="_blank" rel="noopener noreferrer">Framing Responsible Design of AI for Mental Well-Being: AI as Primary Care, Nutritional Supplement, or Yoga Instructor?</a></p>
                     <p class="pub-authors">Ned Cooper, Jose A. Guridi, Angel Hsing-Chi Hwang, Beth Kolko, Beth McGinty, Qian Yang</p>
                     <p class="pub-venue">[CHI'26] ACM CHI Conference on Human Factors in Computing Systems, 2026</p>
                 </div>
 
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3710912" target="_blank">From Fake Perfects to Conversational Imperfects: Exploring Image-Generative AI as a Boundary Object for Participatory Design of Public Spaces</a></p>
+                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3710912" target="_blank" rel="noopener noreferrer">From Fake Perfects to Conversational Imperfects: Exploring Image-Generative AI as a Boundary Object for Participatory Design of Public Spaces</a></p>
                     <p class="pub-authors">Jose A. Guridi, Angel Hsing-Chi Hwang, Duarte Santo, Maria Goula, Cristobal Cheyre, Lee Humphreys, Marco Rangel</p>
                     <p class="pub-venue">[CSCW'25] Proceedings of the ACM on Human-Computer Interaction, 9(2), 2025</p>
                 </div>
 
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank">Thoughtful Adoption of NLP for Civic Participation: Understanding Differences Among Policymakers</a></p>
+                    <p class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3711091" target="_blank" rel="noopener noreferrer">Thoughtful Adoption of NLP for Civic Participation: Understanding Differences Among Policymakers</a></p>
                     <p class="pub-authors">Jose A. Guridi, Cristobal Cheyre, Qian Yang</p>
                     <p class="pub-venue">[CSCW'25] Proceedings of the ACM on Human-Computer Interaction, 9(2), 2025</p>
                 </div>
             </div>
+            </div>
 
+            <div class="pub-section" data-category="workshops">
             <h3 class="pub-category">Articulos de Taller y Resumenes Extendidos</h3>
             <div class="pub-list">
                 <div class="pub-item">
@@ -95,7 +121,7 @@
                 </div>
 
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://doi.org/10.1145/3584931.3607004" target="_blank">Are You Anonymous? Inferring Personal Information from Nonverbal Behavior Data Tracked in Immersive Virtual Reality</a></p>
+                    <p class="pub-title"><a href="https://doi.org/10.1145/3584931.3607004" target="_blank" rel="noopener noreferrer">Are You Anonymous? Inferring Personal Information from Nonverbal Behavior Data Tracked in Immersive Virtual Reality</a></p>
                     <p class="pub-authors">Yeonju Jang, Jose A. Guridi, Daniel Molitor, Rachel Kwon, Sneha Nagarajan</p>
                     <p class="pub-venue">ACM Conference on Computer Supported Cooperative Work and Social Computing (Companion), 2023</p>
                 </div>
@@ -118,7 +144,9 @@
                     <p class="pub-venue">Atlanta Conference on Science and Innovation Policy, 2017</p>
                 </div>
             </div>
+            </div>
 
+            <div class="pub-section" data-category="books">
             <h3 class="pub-category">Capitulos de Libro</h3>
             <div class="pub-list">
                 <div class="pub-item">
@@ -139,14 +167,23 @@
                     <p class="pub-venue">En: Actas de la Primeras Jornadas Latinoamericanas de Derecho y Tecnologia, editado por Maria Cecilia Alcalde, Tirant Lo Blanche, 2025</p>
                 </div>
             </div>
+            </div>
 
+            <div class="pub-section" data-category="reports">
             <h3 class="pub-category">Informes de Politica Publica</h3>
             <div class="pub-list">
                 <div class="pub-item">
-                    <p class="pub-title"><a href="https://publications.iadb.org/es/recomendaciones-para-la-implementacion-de-sandboxes-regulatorios-de-ia" target="_blank">Recomendaciones para la implementacion de sandboxes regulatorios de IA</a></p>
+                    <p class="pub-title"><a href="https://unesdoc.unesco.org/ark:/48223/pf0000397306" target="_blank" rel="noopener noreferrer">Context Matters: Localising UNESCO's Readiness Assessment Methodology</a></p>
+                    <p class="pub-authors">Adya Danaditya, Jose Antonio Guridi Bustos, Shazade Jameson, Cristina Martinez Pinto</p>
+                    <p class="pub-venue">UNESCO, 2026</p>
+                </div>
+
+                <div class="pub-item">
+                    <p class="pub-title"><a href="https://publications.iadb.org/es/recomendaciones-para-la-implementacion-de-sandboxes-regulatorios-de-ia" target="_blank" rel="noopener noreferrer">Recomendaciones para la implementacion de sandboxes regulatorios de IA</a></p>
                     <p class="pub-authors">Jose A. Guridi, Pilar Trivelli</p>
                     <p class="pub-venue">Banco Interamericano de Desarrollo, 2025</p>
                 </div>
+            </div>
             </div>
 
         </section>
@@ -155,5 +192,39 @@
     <footer>
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
+
+    <script>
+    (function() {
+        // Hamburger menu
+        var toggle = document.querySelector('.nav-toggle');
+        var navLinks = document.querySelector('.nav-links');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function() {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !expanded);
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+        }
+
+        // Publication filters
+        var filterBtns = document.querySelectorAll('.pub-filter-btn');
+        var sections = document.querySelectorAll('.pub-section');
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = btn.getAttribute('data-filter');
+                filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                sections.forEach(function(s) {
+                    if (filter === 'all' || s.getAttribute('data-category') === filter) {
+                        s.removeAttribute('hidden');
+                    } else {
+                        s.setAttribute('hidden', '');
+                    }
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
