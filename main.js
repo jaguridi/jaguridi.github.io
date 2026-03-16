@@ -54,19 +54,39 @@
         });
     }
 
-    // Hide duplicate consecutive news dates within each list
+    // Insert month group headers in news lists
+    var isES = document.documentElement.lang === 'es';
+    var monthNames = isES
+        ? { 'Ene': 'Enero', 'Feb': 'Febrero', 'Mar': 'Marzo', 'Abr': 'Abril',
+            'May': 'Mayo', 'Jun': 'Junio', 'Jul': 'Julio', 'Ago': 'Agosto',
+            'Sep': 'Septiembre', 'Oct': 'Octubre', 'Nov': 'Noviembre', 'Dic': 'Diciembre' }
+        : { 'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
+            'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
+            'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December' };
     document.querySelectorAll('.news-list').forEach(function(list) {
         var items = list.querySelectorAll('.news-item');
         var prevDate = '';
+        var insertions = [];
         items.forEach(function(item) {
             var dateEl = item.querySelector('.news-date');
             if (dateEl) {
                 var date = dateEl.textContent.trim();
-                if (date === prevDate) {
-                    dateEl.style.visibility = 'hidden';
+                if (date !== prevDate) {
+                    // Extract month abbreviation and expand it
+                    var parts = date.split(' ');
+                    var monthLabel = monthNames[parts[0]] || parts[0];
+                    var divider = document.createElement('li');
+                    divider.className = 'news-month-divider';
+                    divider.setAttribute('aria-hidden', 'true');
+                    divider.textContent = monthLabel.toUpperCase();
+                    insertions.push({ divider: divider, before: item });
+                    prevDate = date;
                 }
-                prevDate = date;
+                dateEl.style.display = 'none';
             }
+        });
+        insertions.forEach(function(ins) {
+            list.insertBefore(ins.divider, ins.before);
         });
     });
 

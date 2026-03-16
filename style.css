@@ -272,6 +272,27 @@ main {
     font-weight: 600;
 }
 
+.news-month-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    padding: 0.3rem 0 0;
+    list-style: none;
+    border-bottom: none;
+}
+
+.news-month-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
 /* Publications */
 .pub-list {
     display: flex;
