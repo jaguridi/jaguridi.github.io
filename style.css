@@ -809,16 +809,16 @@ button:focus-visible {
     }
 
     .pub-filter-btn.active {
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     .recruitment-btn-primary,
     .recruitment-btn-primary:hover {
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     .recruitment-btn-secondary:hover {
-        color: #ffffff;
+        color: #1a1a1a;
     }
 
     img {
