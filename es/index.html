@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose A. Guridi | Cornell University</title>
+    <title>Jose A. Guridi | Universidad de Cornell</title>
     <meta name="description" content="Jose A. Guridi es candidato a doctor en Ciencias de la Informaci&oacute;n en Cornell University. Investiga gobernanza de IA, HCI, CSCW y pol&iacute;tica tecnol&oacute;gica.">
     <link rel="canonical" href="https://jaguridi.github.io/es/index.html">
     <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/index.html">
@@ -221,26 +221,6 @@
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
 
-    <script>
-    (function() {
-        var toggle = document.querySelector('.nav-toggle');
-        var navLinks = document.querySelector('.nav-links');
-        if (toggle && navLinks) {
-            toggle.addEventListener('click', function() {
-                var expanded = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', !expanded);
-                toggle.classList.toggle('active');
-                navLinks.classList.toggle('open');
-            });
-            navLinks.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    toggle.setAttribute('aria-expanded', 'false');
-                    toggle.classList.remove('active');
-                    navLinks.classList.remove('open');
-                });
-            });
-        }
-    })();
-    </script>
+    <script src="../main.js"></script>
 </body>
 </html>

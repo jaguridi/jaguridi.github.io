@@ -249,26 +249,6 @@
         <p>&copy; 2026 Jose A. Guridi</p>
     </footer>
 
-    <script>
-    (function() {
-        var toggle = document.querySelector('.nav-toggle');
-        var navLinks = document.querySelector('.nav-links');
-        if (toggle && navLinks) {
-            toggle.addEventListener('click', function() {
-                var expanded = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', !expanded);
-                toggle.classList.toggle('active');
-                navLinks.classList.toggle('open');
-            });
-            navLinks.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    toggle.setAttribute('aria-expanded', 'false');
-                    toggle.classList.remove('active');
-                    navLinks.classList.remove('open');
-                });
-            });
-        }
-    })();
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

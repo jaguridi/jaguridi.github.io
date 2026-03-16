@@ -93,6 +93,11 @@ nav {
     color: var(--color-accent);
 }
 
+.nav-links a[aria-current="page"] {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
 .lang-switch {
     font-size: 0.85rem;
     color: var(--color-text-light);
