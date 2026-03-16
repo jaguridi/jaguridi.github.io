@@ -54,6 +54,22 @@
         });
     }
 
+    // Hide duplicate consecutive news dates within each list
+    document.querySelectorAll('.news-list').forEach(function(list) {
+        var items = list.querySelectorAll('.news-item');
+        var prevDate = '';
+        items.forEach(function(item) {
+            var dateEl = item.querySelector('.news-date');
+            if (dateEl) {
+                var date = dateEl.textContent.trim();
+                if (date === prevDate) {
+                    dateEl.style.visibility = 'hidden';
+                }
+                prevDate = date;
+            }
+        });
+    });
+
     // Dynamic footer year
     var footerP = document.querySelector('footer p');
     if (footerP) {
