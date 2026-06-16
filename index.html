@@ -102,7 +102,7 @@
             - When changing studies, update DISMISS_KEY so returning visitors see the new callout
 
             CONFIG:
-              ENABLED: true
+              ENABLED: false
               DISMISS_KEY: "recruit-ai-qualitative-research"
               STUDY: "AI in Qualitative Research"
               TITLE: "Participate in AI & Qualitative Research Study"
@@ -110,7 +110,7 @@
               BUTTON_1: "Take Survey" | https://cornell.ca1.qualtrics.com/jfe/form/SV_b4wjWfxsV9eg4No
               BUTTON_2: "Contact for Interview" | mailto:jg2222@cornell.edu?subject=AI%20Qualitative%20Research%20Study
         -->
-        <div class="recruitment-callout" id="recruitment-callout">
+        <div class="recruitment-callout" id="recruitment-callout" style="display:none">
             <button class="recruitment-dismiss" onclick="dismissRecruitment()" aria-label="Dismiss">&times;</button>
             <div class="recruitment-callout-title">Participate in AI &amp; Qualitative Research Study</div>
             <p class="recruitment-callout-desc">As a Data Science Fellow at Cornell's Qualitative and Interpretive Research Institute (QuIRI), I'm studying how qualitative researchers think about AI in their work. Whether you use it, avoid it, or are somewhere in between, I'd like to understand the reasoning behind your choices.</p>
