@@ -95,4 +95,25 @@
     if (footerP) {
         footerP.innerHTML = '&copy; ' + new Date().getFullYear() + ' Jose A. Guridi';
     }
+
+    // Click-to-load YouTube talk videos (privacy-friendly facade:
+    // no YouTube iframe/cookies are loaded until the visitor clicks play)
+    document.addEventListener('click', function(e) {
+        var facade = e.target.closest && e.target.closest('.talk-facade');
+        if (!facade) return;
+        var media = facade.parentNode;
+        var id = media.getAttribute('data-video-id');
+        if (!id) return;
+        var src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        var start = media.getAttribute('data-start');
+        if (start) { src += '&start=' + start; }
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', src);
+        iframe.setAttribute('title', facade.getAttribute('aria-label') || 'Video');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        media.innerHTML = '';
+        media.appendChild(iframe);
+    });
 })();

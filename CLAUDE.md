@@ -69,3 +69,25 @@ A recruitment callout box exists in `index.html` and `es/index.html`, between th
 2. Update the CONFIG comment and the visible HTML in both `index.html` and `es/index.html`
 3. If changing to a different study, also update DISMISS_KEY and the script `key` variable
 4. Commit with message: "Update recruitment box: [what changed]"
+
+## Talks & Media
+
+The `talks.html` and `es/talks.html` pages hold recorded talks (YouTube videos) and press mentions. Videos use a privacy-friendly "click-to-load" facade: only a thumbnail loads until the visitor clicks play, then `main.js` swaps in a `youtube-nocookie.com` iframe. Recorded talks live in a `talk-list`; the `In the Press` section below it is commented out until the first real mention exists. Both pages carry `HOW TO ADD` templates in comments. The homepage (`index.html`, `es/index.html`) shows one featured talk in a `#talks-preview` / `#charlas` section that links to the full page.
+
+### "Add talk: [YouTube URL] — [venue, date, one-line description]"
+
+1. Extract the 11-character YouTube video ID from the URL (the `v=` value, e.g. `nphKs8Id19U`). If the venue/date/description aren't given, fetch the video title from `https://www.youtube.com/oembed?url=<watch-url>&format=json` and ask the user to confirm venue, date, and a one-line summary.
+2. In BOTH `talks.html` and `es/talks.html`, copy the `talk-item` block from the `HOW TO ADD A RECORDED TALK` comment and paste it at the TOP of the `talk-list` (most recent first).
+3. Fill in: `data-video-id` (twice — the div attribute and the thumbnail URL `https://i.ytimg.com/vi/<ID>/hqdefault.jpg`), the `aria-label`, `talk-title`, `talk-venue` (venue in `<strong>`, then `&middot; TYPE &middot; Mon YYYY`), and `talk-desc`.
+4. Keep the talk title in its original language on both pages; translate only the `talk-venue` type label and `talk-desc` for the Spanish page. Spanish month abbreviations use the same short forms as the news list (Ene, Feb, Mar, Abr, May…).
+5. If this is the newest talk, also update the featured video in the homepage preview (`#talks-preview` in `index.html` and `#charlas` in `es/index.html`) to match.
+6. Do not modify anything else on any page.
+7. Commit with message: "Add talk: [short description]"
+
+### "Add press: [outlet], [URL] — [date, context]"
+
+1. In BOTH `talks.html` and `es/talks.html`, the "In the Press" section is commented out until the first mention. Uncomment it: remove the `<!--` / `-->` wrapper around the `IN THE PRESS` block so the `<h3>` and `<ul class="press-list">` render, and delete the example `press-item` row.
+2. Copy the `press-item` block and paste it at the TOP of the `press-list` (most recent first). Fill in: `press-date` ("Mon YYYY" or just the year), outlet name in `<strong>`, the headline as a link (`target="_blank" rel="noopener noreferrer"`), and one line of context.
+3. Keep the headline in its original language; translate only the context line for the Spanish page.
+5. Do not modify anything else on any page.
+6. Commit with message: "Add press: [outlet]"
