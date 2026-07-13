@@ -17,23 +17,15 @@ When I say "add news:" followed by a short description, do the following:
 7. Commit with message: "Add news: [short description]"
 
 
-## CV Sync
+## CV
 
-The CV has two synchronized representations:
-- `CV/Jose_Guridi_CV.pdf` — the canonical, hand-designed PDF (source of truth). The user maintains this externally.
-- `cv.html` and `es/cv.html` — web mirrors of the PDF, styled to match the rest of the site. Both link to the PDF via a "Download PDF" button.
+The CV is a downloadable PDF at `CV/Jose_Guridi_CV.pdf`, linked from the homepage hero (the `social-links` row in `index.html` and `es/index.html`). There is no web-page version — the dedicated `cv.html` / `es/cv.html` pages and the "CV" nav link were removed 2026-07-13.
 
-### "Sync CV" (or "update CV from PDF")
+### "Update the CV" (or "sync CV")
 
-When the user provides an updated CV PDF (or asks to sync), do the following:
-
-1. If a new PDF path is given, copy it to `CV/Jose_Guridi_CV.pdf` (keep the filename stable so all links keep working).
-2. Read the PDF with the Read tool.
-3. Diff against the current `cv.html`. Update only the sections/entries that changed (new publications, talks, positions, awards, etc.). Preserve the existing structure (`cv-section`, `cv-entry`, `cv-date`, `cv-body`, `cv-title`, `cv-sub`, `cv-venue`, `<em class="me">` for Guridi's name).
-4. Apply the same changes to `es/cv.html`, translating only the section headers and labels (publication titles and author lists stay in their original language).
-5. Update the "Updated [month year]" line in both files to match the date on the PDF.
-6. Do not modify any other page.
-7. Commit with message: "Sync CV from PDF".
+1. Replace `CV/Jose_Guridi_CV.pdf` with the new file, keeping the filename stable so the hero links keep working.
+2. Do not modify anything else.
+3. Commit with message: "Update CV PDF".
 
 ## Recruitment Callout Box
 
