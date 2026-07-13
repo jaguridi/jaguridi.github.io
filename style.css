@@ -169,6 +169,14 @@ main {
     margin-bottom: 1.2rem;
 }
 
+.hero-tagline {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.55;
+    margin-top: 0.75rem;
+    max-width: 36rem;
+}
+
 .social-links {
     display: flex;
     gap: 1.2rem;
@@ -491,6 +499,27 @@ main {
 
 .project-outputs a:hover {
     border-bottom-color: var(--color-accent);
+}
+
+/* Policy List */
+.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.policy-list li {
+    padding: 0.4rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    line-height: 1.55;
+}
+
+.policy-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
 }
 
 /* Contact */
