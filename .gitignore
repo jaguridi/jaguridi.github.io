@@ -1,0 +1,15 @@
+# ==========================================================
+# PRIVATE WORK CORPUS — NEVER PUBLISH.
+# This repo is PUBLIC (GitHub Pages). my_work/ contains
+# drafts, publisher proofs, and under-review manuscripts.
+# See my_work/INDEX.md for the catalog.
+# ==========================================================
+my_work/
+
+# Agent / Claude Code internals
+.claude/worktrees/
+.claude/settings.local.json
+
+# OS artifacts
+Thumbs.db
+.DS_Store
