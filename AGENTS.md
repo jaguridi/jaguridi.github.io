@@ -1,4 +1,4 @@
-# Claude Code Instructions for Academic Website
+# Codex Instructions for Academic Website
 
 ## News Updates
 
@@ -99,4 +99,4 @@ The `talks.html` and `es/talks.html` pages hold recorded talks (YouTube videos) 
 - **NEVER commit or publish `my_work/`** — this repo is public (GitHub Pages). The folder is excluded via `.gitignore`; keep it that way.
 - Publisher proofs and under-review drafts must not be posted to the site without checking the author agreement first.
 - When files are added, removed, or renamed there, update `my_work/INDEX.md`.
-- `AGENTS.md` mirrors this file for other coding agents (Codex). When updating CLAUDE.md, apply the same change to AGENTS.md.
+- `CLAUDE.md` is the primary copy of these instructions. When updating CLAUDE.md, apply the same change to this file.
