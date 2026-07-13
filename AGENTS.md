@@ -72,7 +72,7 @@ A recruitment callout box exists in `index.html` and `es/index.html`, between th
 
 ## Talks & Media
 
-The `talks.html` and `es/talks.html` pages hold recorded talks (YouTube videos) and press mentions. Videos use a privacy-friendly "click-to-load" facade: only a thumbnail loads until the visitor clicks play, then `main.js` swaps in a `youtube-nocookie.com` iframe. Recorded talks live in a `talk-list`; the `In the Press` section below it is commented out until the first real mention exists. Both pages carry `HOW TO ADD` templates in comments. The homepage (`index.html`, `es/index.html`) shows one featured talk in a `#talks-preview` / `#charlas` section that links to the full page.
+The `talks.html` and `es/talks.html` pages hold recorded talks (YouTube videos) and press mentions. Videos use a privacy-friendly "click-to-load" facade: only a thumbnail loads until the visitor clicks play, then `main.js` swaps in a `youtube-nocookie.com` iframe. Recorded talks live in a `talk-list`, followed by two `press-list` sections that are now live: `Writing` (ES: `Divulgación`) for pieces José authored for broad audiences, and `In the Press` (ES: `En la Prensa`) for media coverage. Both pages carry `HOW TO ADD` templates in comments. The homepage (`index.html`, `es/index.html`) shows one featured talk in a `#talks-preview` / `#charlas` section that links to the full page.
 
 ### "Add talk: [YouTube URL] — [venue, date, one-line description]"
 
@@ -84,9 +84,19 @@ The `talks.html` and `es/talks.html` pages hold recorded talks (YouTube videos) 
 6. Do not modify anything else on any page.
 7. Commit with message: "Add talk: [short description]"
 
+### "Add writing: [URL] — [outlet, date, one-line description]"
+
+For pieces José authored for broad audiences (blog posts, op-eds, essays).
+
+1. In BOTH `talks.html` and `es/talks.html`, find the `Writing` / `Divulgación` section (a `press-list`).
+2. Copy a `press-item` and paste it at the TOP (most recent first). Fill in: `press-date` ("Mon YYYY"), the outlet/venue in `<strong>`, the headline as a link (`target="_blank" rel="noopener noreferrer"`), and one line of context.
+3. Keep the headline in its original language; translate only the context line for the Spanish page.
+4. Do not modify anything else on any page.
+5. Commit with message: "Add writing: [short description]"
+
 ### "Add press: [outlet], [URL] — [date, context]"
 
-1. In BOTH `talks.html` and `es/talks.html`, the "In the Press" section is commented out until the first mention. Uncomment it: remove the `<!--` / `-->` wrapper around the `IN THE PRESS` block so the `<h3>` and `<ul class="press-list">` render, and delete the example `press-item` row.
+1. In BOTH `talks.html` and `es/talks.html`, the `In the Press` / `En la Prensa` section is live (a `press-list`).
 2. Copy the `press-item` block and paste it at the TOP of the `press-list` (most recent first). Fill in: `press-date` ("Mon YYYY" or just the year), outlet name in `<strong>`, the headline as a link (`target="_blank" rel="noopener noreferrer"`), and one line of context.
 3. Keep the headline in its original language; translate only the context line for the Spanish page.
 5. Do not modify anything else on any page.
