@@ -2,51 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jaguridi.github.io/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/"/>
+    <loc>https://www.jaguridi.cl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/"/>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/news.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/news.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/news.html"/>
+    <loc>https://www.jaguridi.cl/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/news.html"/>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/publications.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html"/>
+    <loc>https://www.jaguridi.cl/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/publications.html"/>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/projects.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/projects.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/projects.html"/>
+    <loc>https://www.jaguridi.cl/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/projects.html"/>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/"/>
+    <loc>https://www.jaguridi.cl/talks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/talks.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/talks.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/talks.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.jaguridi.cl/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/"/>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/es/news.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/news.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/news.html"/>
+    <loc>https://www.jaguridi.cl/es/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/news.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/news.html"/>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/es/publications.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/publications.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/publications.html"/>
+    <loc>https://www.jaguridi.cl/es/publications.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/publications.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/publications.html"/>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaguridi.github.io/es/projects.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jaguridi.github.io/projects.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/projects.html"/>
+    <loc>https://www.jaguridi.cl/es/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/projects.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.jaguridi.cl/es/talks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/talks.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/talks.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/talks.html"/>
     <priority>0.7</priority>
   </url>
 </urlset>

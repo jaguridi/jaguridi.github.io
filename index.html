@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jose A. Guridi | Cornell University</title>
     <meta name="description" content="Jose A. Guridi studies how AI meets institutions, organizations, and people. He coordinated Chile's National AI Policy and works with UNESCO and the IDB across the Global South. Ph.D. Candidate in Information Science at Cornell University.">
-    <link rel="canonical" href="https://jaguridi.github.io/index.html">
-    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/index.html">
-    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/index.html">
+    <link rel="canonical" href="https://www.jaguridi.cl/">
+    <link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/">
+    <link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/">
+    <link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -16,29 +17,44 @@
     <meta property="og:title" content="Jose A. Guridi | Cornell University">
     <meta property="og:description" content="Jose A. Guridi studies how AI meets institutions, organizations, and people. He coordinated Chile's National AI Policy and works with UNESCO and the IDB across the Global South. Ph.D. Candidate in Information Science at Cornell University.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaguridi.github.io/">
-    <meta property="og:image" content="https://jaguridi.github.io/images/jose-guridi-headshot.jpg">
+    <meta property="og:url" content="https://www.jaguridi.cl/">
+    <meta property="og:image" content="https://www.jaguridi.cl/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JguridiB">
     <meta name="twitter:title" content="Jose A. Guridi | Cornell University">
     <meta name="twitter:description" content="Jose A. Guridi studies how AI meets institutions, organizations, and people. He coordinated Chile's National AI Policy and works with UNESCO and the IDB across the Global South. Ph.D. Candidate in Information Science at Cornell University.">
-    <meta name="twitter:image" content="https://jaguridi.github.io/images/jose-guridi-headshot.jpg">
+    <meta name="twitter:image" content="https://www.jaguridi.cl/images/og-image.png">
 
-    <!-- JSON-LD Structured Data -->
+        <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Jose A. Guridi",
-        "url": "https://jaguridi.github.io/",
-        "image": "https://jaguridi.github.io/images/jose-guridi-headshot.jpg",
+        "url": "https://www.jaguridi.cl/",
+        "image": "https://www.jaguridi.cl/images/jose-guridi-headshot.jpg",
         "jobTitle": "Ph.D. Candidate in Information Science",
         "affiliation": {
-            "@type": "Organization",
-            "name": "Cornell University"
+            "@type": "CollegeOrUniversity",
+            "name": "Cornell University",
+            "url": "https://www.cornell.edu"
         },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Pontificia Universidad Católica de Chile",
+            "url": "https://www.uc.cl"
+        },
+        "knowsAbout": [
+            "Artificial Intelligence Governance",
+            "Human-Computer Interaction",
+            "Science and Technology Policy",
+            "Public Participation",
+            "Global South Technology Studies"
+        ],
         "sameAs": [
             "https://twitter.com/JguridiB",
             "https://www.linkedin.com/in/jaguridi",
@@ -52,15 +68,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+    (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    })();
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
     <header>
         <nav aria-label="Main navigation">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+                        <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.4 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                </button>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="news.html">News</a>
@@ -106,19 +136,19 @@
             CONFIG:
               ENABLED: false
               DISMISS_KEY: "recruit-ai-qualitative-research"
-              STUDY: "AI in Qualitative Research"
-              TITLE: "Participate in AI & Qualitative Research Study"
-              DESCRIPTION: "As a Data Science Fellow at Cornell's Qualitative and Interpretive Research Institute (QuIRI), I'm studying how qualitative researchers think about AI in their work. Whether you use it, avoid it, or are somewhere in between, I'd like to understand the reasoning behind your choices."
-              BUTTON_1: "Take Survey" | https://cornell.ca1.qualtrics.com/jfe/form/SV_b4wjWfxsV9eg4No
-              BUTTON_2: "Contact for Interview" | mailto:jg2222@cornell.edu?subject=AI%20Qualitative%20Research%20Study
+              STUDY: ""
+              TITLE: ""
+              DESCRIPTION: ""
+              BUTTON_1: ""
+              BUTTON_2: ""
         -->
         <div class="recruitment-callout" id="recruitment-callout" style="display:none">
             <button class="recruitment-dismiss" onclick="dismissRecruitment()" aria-label="Dismiss">&times;</button>
-            <div class="recruitment-callout-title">Participate in AI &amp; Qualitative Research Study</div>
-            <p class="recruitment-callout-desc">As a Data Science Fellow at Cornell's Qualitative and Interpretive Research Institute (QuIRI), I'm studying how qualitative researchers think about AI in their work. Whether you use it, avoid it, or are somewhere in between, I'd like to understand the reasoning behind your choices.</p>
+            <div class="recruitment-callout-title"></div>
+            <p class="recruitment-callout-desc"></p>
             <div class="recruitment-callout-buttons">
-                <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_b4wjWfxsV9eg4No" class="recruitment-btn-primary" target="_blank" rel="noopener noreferrer">Take Survey</a>
-                <a href="mailto:jg2222@cornell.edu?subject=AI%20Qualitative%20Research%20Study" class="recruitment-btn-secondary">Contact for Interview</a>
+                <a href="#" class="recruitment-btn-primary" target="_blank" rel="noopener noreferrer"></a>
+                <a href="#" class="recruitment-btn-secondary"></a>
             </div>
         </div>
         <script>

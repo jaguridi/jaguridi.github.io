@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jose A. Guridi | Universidad de Cornell</title>
     <meta name="description" content="José A. Guridi estudia cómo la IA se encuentra con instituciones, organizaciones y personas. Coordinó la Política Nacional de IA de Chile y trabaja con la UNESCO y el BID en el Sur Global. Candidato a Doctor en Ciencias de la Información en Cornell University.">
-    <link rel="canonical" href="https://jaguridi.github.io/es/index.html">
-    <link rel="alternate" hreflang="en" href="https://jaguridi.github.io/index.html">
-    <link rel="alternate" hreflang="es" href="https://jaguridi.github.io/es/index.html">
+    <link rel="canonical" href="https://www.jaguridi.cl/es/">
+    <link rel="alternate" hreflang="en" href="https://www.jaguridi.cl/">
+    <link rel="alternate" hreflang="es" href="https://www.jaguridi.cl/es/">
+    <link rel="alternate" hreflang="x-default" href="https://www.jaguridi.cl/">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" href="../favicon.png">
@@ -16,32 +17,83 @@
     <meta property="og:title" content="Jose A. Guridi | Cornell University">
     <meta property="og:description" content="José A. Guridi estudia cómo la IA se encuentra con instituciones, organizaciones y personas. Coordinó la Política Nacional de IA de Chile y trabaja con la UNESCO y el BID en el Sur Global. Candidato a Doctor en Ciencias de la Información en Cornell University.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaguridi.github.io/es/">
-    <meta property="og:image" content="https://jaguridi.github.io/images/jose-guridi-headshot.jpg">
+    <meta property="og:url" content="https://www.jaguridi.cl/es/">
+    <meta property="og:image" content="https://www.jaguridi.cl/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_ES">
 
+        <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jose A. Guridi",
+        "url": "https://www.jaguridi.cl/es/",
+        "image": "https://www.jaguridi.cl/images/jose-guridi-headshot.jpg",
+        "jobTitle": "Candidato a Doctor en Ciencias de la Información",
+        "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Cornell University",
+            "url": "https://www.cornell.edu"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Pontificia Universidad Católica de Chile",
+            "url": "https://www.uc.cl"
+        },
+        "knowsAbout": [
+            "Artificial Intelligence Governance",
+            "Human-Computer Interaction",
+            "Science and Technology Policy",
+            "Public Participation",
+            "Global South Technology Studies"
+        ],
+        "sameAs": [
+            "https://twitter.com/JguridiB",
+            "https://www.linkedin.com/in/jaguridi",
+            "https://scholar.google.com/citations?user=P5xFVC4AAAAJ",
+            "https://www.researchgate.net/profile/Jose-Guridi-2"
+        ]
+    }
+    </script>
+
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JguridiB">
     <meta name="twitter:title" content="Jose A. Guridi | Cornell University">
     <meta name="twitter:description" content="José A. Guridi estudia cómo la IA se encuentra con instituciones, organizaciones y personas. Coordinó la Política Nacional de IA de Chile y trabaja con la UNESCO y el BID en el Sur Global. Candidato a Doctor en Ciencias de la Información en Cornell University.">
-    <meta name="twitter:image" content="https://jaguridi.github.io/images/jose-guridi-headshot.jpg">
+    <meta name="twitter:image" content="https://www.jaguridi.cl/images/og-image.png">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+    (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    })();
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Ir al contenido</a>
     <header>
         <nav aria-label="Navegaci&oacute;n principal">
             <a href="index.html" class="nav-name">Jose A. Guridi</a>
-            <button class="nav-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+                        <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.4 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0 1.41l1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                </button>
+                <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
             <div class="nav-links">
-                <a href="#sobre">Sobre mi</a>
+                <a href="#sobre">Sobre mí</a>
                 <a href="news.html">Novedades</a>
                 <a href="publications.html">Publicaciones</a>
                 <a href="projects.html">Proyectos</a>
@@ -60,7 +112,7 @@
             </div>
             <div class="hero-content">
                 <h1>Jose A. Guridi</h1>
-                <p class="subtitle">Candidato a Doctor en Ciencias de la Informacion</p>
+                <p class="subtitle">Candidato a Doctor en Ciencias de la Información</p>
                 <p class="affiliation">Cornell University</p>
                 <p class="hero-tagline">Estudio qué pasa cuando la IA se encuentra con gobiernos, organizaciones y personas &mdash; sobre todo en América Latina y el Sur Global.</p>
                 <div class="social-links">
@@ -78,19 +130,19 @@
             CONFIG:
               ENABLED: false
               DISMISS_KEY: "recruit-ai-qualitative-research"
-              STUDY: "IA en Investigacion Cualitativa"
-              TITLE: "Participa en un Estudio sobre IA e Investigacion Cualitativa"
-              DESCRIPTION: "Como Data Science Fellow en el Qualitative and Interpretive Research Institute (QuIRI) de Cornell, estoy estudiando como los investigadores cualitativos piensan sobre la IA en su trabajo. Ya sea que la uses, la evites, o estes en algun punto intermedio, me gustaria entender el razonamiento detras de tus decisiones."
-              BUTTON_1: "Responder Encuesta" | https://cornell.ca1.qualtrics.com/jfe/form/SV_b4wjWfxsV9eg4No
-              BUTTON_2: "Contacto para Entrevista" | mailto:jg2222@cornell.edu?subject=Estudio%20IA%20Investigacion%20Cualitativa
+              STUDY: ""
+              TITLE: ""
+              DESCRIPTION: ""
+              BUTTON_1: ""
+              BUTTON_2: ""
         -->
         <div class="recruitment-callout" id="recruitment-callout" style="display:none">
             <button class="recruitment-dismiss" onclick="dismissRecruitment()" aria-label="Cerrar">&times;</button>
-            <div class="recruitment-callout-title">Participa en un Estudio sobre IA e Investigaci&oacute;n Cualitativa</div>
-            <p class="recruitment-callout-desc">Como Data Science Fellow en el Qualitative and Interpretive Research Institute (QuIRI) de Cornell, estoy estudiando c&oacute;mo los investigadores cualitativos piensan sobre la IA en su trabajo. Ya sea que la uses, la evites, o est&eacute;s en alg&uacute;n punto intermedio, me gustar&iacute;a entender el razonamiento detr&aacute;s de tus decisiones.</p>
+            <div class="recruitment-callout-title"></div>
+            <p class="recruitment-callout-desc"></p>
             <div class="recruitment-callout-buttons">
-                <a href="https://cornell.ca1.qualtrics.com/jfe/form/SV_b4wjWfxsV9eg4No" class="recruitment-btn-primary" target="_blank" rel="noopener noreferrer">Responder Encuesta</a>
-                <a href="mailto:jg2222@cornell.edu?subject=Estudio%20IA%20Investigacion%20Cualitativa" class="recruitment-btn-secondary">Contacto para Entrevista</a>
+                <a href="#" class="recruitment-btn-primary" target="_blank" rel="noopener noreferrer"></a>
+                <a href="#" class="recruitment-btn-secondary"></a>
             </div>
         </div>
         <script>
@@ -109,7 +161,7 @@
 
         <!-- About Section -->
         <section id="sobre" class="section">
-            <h2>Sobre mi</h2>
+            <h2>Sobre mí</h2>
             <div class="about-content">
                 <p>
                     Soy candidato a doctor en Ciencias de la Información en Cornell. Antes de eso, coordiné el desarrollo de la primera Política Nacional de IA de Chile desde sus ministerios de Economía y Ciencia, y ver una tecnología gobernarse en tiempo real, con restricciones y tensiones reales, sigue siendo lo que mueve mi trabajo.
@@ -234,7 +286,7 @@
             <h2>Contacto</h2>
             <p class="contact-info">
                 <a href="mailto:jg2222@cornell.edu">jg2222@cornell.edu</a><br>
-                Information Science, Cornell University
+                Ciencias de la Información, Universidad de Cornell
             </p>
         </section>
     </main>

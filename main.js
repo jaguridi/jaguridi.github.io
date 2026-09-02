@@ -1,4 +1,41 @@
 (function() {
+    // Theme toggle
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        var isES = document.documentElement.lang === 'es';
+        var updateThemeLabels = function(isDark) {
+            var label = isDark
+                ? (isES ? 'Cambiar a modo claro' : 'Switch to light mode')
+                : (isES ? 'Cambiar a modo oscuro' : 'Switch to dark mode');
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.setAttribute('title', label);
+        };
+
+        var getEffectiveTheme = function() {
+            var stored = localStorage.getItem('theme');
+            if (stored) return stored;
+            return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        };
+
+        updateThemeLabels(getEffectiveTheme() === 'dark');
+
+        themeToggle.addEventListener('click', function() {
+            var currentTheme = document.documentElement.getAttribute('data-theme') || getEffectiveTheme();
+            var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeLabels(newTheme === 'dark');
+        });
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    updateThemeLabels(e.matches);
+                }
+            });
+        }
+    }
+
     // Hamburger menu
     var toggle = document.querySelector('.nav-toggle');
     var navLinks = document.querySelector('.nav-links');
@@ -54,9 +91,47 @@
         });
     }
 
+    // BibTeX copy button
+    document.addEventListener('click', function(e) {
+        var btn = e.target.closest && e.target.closest('.pub-copy-bibtex');
+        if (!btn) return;
+        var pre = btn.parentNode && btn.parentNode.querySelector('pre code');
+        if (!pre) return;
+        var text = pre.textContent;
+        var isES = document.documentElement.lang === 'es';
+        var originalText = btn.textContent;
+        var showSuccess = function() {
+            btn.textContent = isES ? '¡Copiado!' : 'Copied!';
+            setTimeout(function() {
+                btn.textContent = originalText;
+            }, 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(showSuccess).catch(function() {
+                fallbackCopy(text, showSuccess);
+            });
+        } else {
+            fallbackCopy(text, showSuccess);
+        }
+    });
+
+    function fallbackCopy(text, callback) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            if (callback) callback();
+        } catch (err) {}
+        document.body.removeChild(textarea);
+    }
+
     // Insert month group headers in news lists
-    var isES = document.documentElement.lang === 'es';
-    var monthNames = isES
+    var isESNews = document.documentElement.lang === 'es';
+    var monthNames = isESNews
         ? { 'Ene': 'Enero', 'Feb': 'Febrero', 'Mar': 'Marzo', 'Abr': 'Abril',
             'May': 'Mayo', 'Jun': 'Junio', 'Jul': 'Julio', 'Ago': 'Agosto',
             'Sep': 'Septiembre', 'Oct': 'Octubre', 'Nov': 'Noviembre', 'Dic': 'Diciembre' }
@@ -96,8 +171,7 @@
         footerP.innerHTML = '&copy; ' + new Date().getFullYear() + ' Jose A. Guridi';
     }
 
-    // Click-to-load YouTube talk videos (privacy-friendly facade:
-    // no YouTube iframe/cookies are loaded until the visitor clicks play)
+    // Click-to-load YouTube talk videos (privacy-friendly facade)
     document.addEventListener('click', function(e) {
         var facade = e.target.closest && e.target.closest('.talk-facade');
         if (!facade) return;

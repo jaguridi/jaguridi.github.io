@@ -10,6 +10,10 @@ my_work/
 .claude/worktrees/
 .claude/settings.local.json
 
+# Python (generate_html.py)
+__pycache__/
+*.pyc
+
 # OS artifacts
 Thumbs.db
 .DS_Store

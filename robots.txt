@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaguridi.github.io/sitemap.xml
+Sitemap: https://www.jaguridi.cl/sitemap.xml
