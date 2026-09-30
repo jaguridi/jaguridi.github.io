@@ -28,6 +28,8 @@ This regenerates both `publications.html` and `es/publications.html`.
 | `publications.json` | Source of truth for all publications |
 | `generate_html.py` | Regenerates EN and ES HTML from JSON |
 | `add_publication.py` | Interactive script to add a new entry |
+| `scholar_stats.json` | Google Scholar citation numbers shown on the publications page |
+| `update_scholar_stats.py` | Refreshes `scholar_stats.json` from the Scholar profile and regenerates the pages |
 
 ## Publication Types
 

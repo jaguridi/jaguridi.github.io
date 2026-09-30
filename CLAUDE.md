@@ -94,6 +94,19 @@ For pieces José authored for broad audiences (blog posts, op-eds, essays).
 5. Do not modify anything else on any page.
 6. Commit with message: "Add press: [outlet]"
 
+## Google Scholar Stats
+
+The publications page (`publications.html`, `es/publications.html`) shows a Google Scholar card: total citations, h-index, i10-index, and a citations-per-year bar chart. On screens >= 1320px it sits in the right margin and stays in view while scrolling; on narrower screens it appears inline above the filters. The numbers live in `scholar_stats.json` and are rendered by `generate_html.py` — never edit the card in the HTML directly.
+
+A local scheduled task (`weekly-scholar-stats`, Mondays 9:00) refreshes it automatically.
+
+### "Update Scholar stats"
+
+1. Run `python update_scholar_stats.py`. It fetches the public profile, updates `scholar_stats.json` (including `updated`) and regenerates both publications pages — only if the numbers changed. Exit codes: 0 = updated, 3 = no change, 1 = fetch/parse failed.
+2. If it fails (Scholar sometimes serves a CAPTCHA), read the numbers from https://scholar.google.com/citations?user=P5xFVC4AAAAJ&hl=en, edit `scholar_stats.json` by hand, and run `python generate_html.py`.
+3. Do not modify anything else.
+4. Commit with message: "Update Scholar stats: [N] citations, h [H]"
+
 ## Work Corpus (my_work/)
 
 `my_work/` holds José's private corpus of papers, reports, drafts, and application materials, cataloged file-by-file in `my_work/INDEX.md`.

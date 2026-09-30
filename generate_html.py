@@ -7,6 +7,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 JSON_PATH = SCRIPT_DIR / "publications.json"
+STATS_PATH = SCRIPT_DIR / "scholar_stats.json"
 EN_OUTPUT = SCRIPT_DIR / "publications.html"
 ES_OUTPUT = SCRIPT_DIR / "es" / "publications.html"
 
@@ -113,7 +114,7 @@ EN_HEADER = """\
     </header>
 
     <main id="main-content">
-        <section class="section" style="border-bottom: none;">
+        <section class="section pub-page" style="border-bottom: none;">
             <h2>Publications</h2>
 """
 
@@ -191,7 +192,7 @@ ES_HEADER = """\
     </header>
 
     <main id="main-content">
-        <section class="section" style="border-bottom: none;">
+        <section class="section pub-page" style="border-bottom: none;">
             <h2>Publicaciones</h2>
 """
 
@@ -220,6 +221,59 @@ FOOTER_ES = """\
 </body>
 </html>
 """
+
+
+MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+MONTHS_ES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+
+
+def render_scholar_stats(stats, lang="en"):
+    """Render the Google Scholar citation card (inline on narrow screens, right margin on wide ones)."""
+    es = lang == "es"
+    per_year = sorted((int(y), c) for y, c in stats["citations_per_year"].items())
+    peak = max(c for _, c in per_year) or 1
+    peak_year = max(per_year, key=lambda yc: (yc[1], yc[0]))[0]
+    year, month, _ = stats["updated"].split("-")
+    updated = f"{(MONTHS_ES if es else MONTHS_EN)[int(month) - 1]} {year}"
+
+    t = {
+        "aside": "Métricas de citas en Google Scholar" if es else "Google Scholar citation metrics",
+        "citations": "Citas" if es else "Citations",
+        "per_year": "Citas por año" if es else "Citations per year",
+        "updated": f"Actualizado {updated}" if es else f"Updated {updated}",
+    }
+    fmt = lambda n: f"{n:,}".replace(",", ".") if es else f"{n:,}"
+    summary = ", ".join(f"{y}: {c}" for y, c in per_year)
+
+    lines = [
+        f'            <aside class="scholar-stats" aria-label="{t["aside"]}">',
+        '                <div class="scholar-card">',
+        f'                    <p class="scholar-title"><a href="{html.escape(stats["profile_url"])}" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>',
+        '                    <dl class="scholar-figures">',
+        f'                        <div><dt>{t["citations"]}</dt><dd>{fmt(stats["citations"])}</dd></div>',
+        f'                        <div><dt>h-index</dt><dd>{stats["h_index"]}</dd></div>',
+        f'                        <div><dt>i10-index</dt><dd>{stats["i10_index"]}</dd></div>',
+        '                    </dl>',
+        '                    <div class="scholar-chart">',
+        f'                        <p class="scholar-chart-label">{t["per_year"]}</p>',
+        f'                        <div class="scholar-bars" role="img" aria-label="{t["per_year"]}: {summary}">',
+    ]
+    for y, c in per_year:
+        height = "0" if c == 0 else f"max(2px, {c / peak * 100:.1f}%)"
+        value = f'<span class="scholar-bar-value">{fmt(c)}</span>' if y == peak_year else ""
+        lines.append(
+            f'                            <span class="scholar-col" data-tip="{y}: {fmt(c)}">'
+            f'<span class="scholar-bar" style="height: {height}">{value}</span></span>'
+        )
+    lines += [
+        '                        </div>',
+        f'                        <div class="scholar-axis" aria-hidden="true"><span>{per_year[0][0]}</span><span>{per_year[-1][0]}</span></div>',
+        '                    </div>',
+        f'                    <p class="scholar-updated">{t["updated"]}</p>',
+        '                </div>',
+        '            </aside>\n',
+    ]
+    return "\n".join(lines)
 
 
 def sort_key(pub):
@@ -311,11 +365,15 @@ def render_filter_buttons(lang="en"):
     return "\n".join(lines)
 
 
-def generate_page(pubs, lang="en"):
+def generate_page(pubs, lang="en", stats=None):
     """Generate a full publications HTML page."""
     header = EN_HEADER if lang == "en" else ES_HEADER
     footer = FOOTER_EN if lang == "en" else FOOTER_ES
     parts = [header]
+
+    # Google Scholar citation card
+    if stats:
+        parts.append(render_scholar_stats(stats, lang))
 
     # Filter buttons
     parts.append(render_filter_buttons(lang))
@@ -363,13 +421,17 @@ def generate_page(pubs, lang="en"):
 def main():
     with open(JSON_PATH, "r", encoding="utf-8") as f:
         pubs = json.load(f)
+    stats = None
+    if STATS_PATH.exists():
+        with open(STATS_PATH, "r", encoding="utf-8") as f:
+            stats = json.load(f)
 
-    en_html = generate_page(pubs, "en")
+    en_html = generate_page(pubs, "en", stats)
     with open(EN_OUTPUT, "w", encoding="utf-8", newline="\n") as f:
         f.write(en_html)
     print(f"Generated {EN_OUTPUT}")
 
-    es_html = generate_page(pubs, "es")
+    es_html = generate_page(pubs, "es", stats)
     with open(ES_OUTPUT, "w", encoding="utf-8", newline="\n") as f:
         f.write(es_html)
     print(f"Generated {ES_OUTPUT}")
