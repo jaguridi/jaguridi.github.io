@@ -114,7 +114,7 @@ EN_HEADER = """\
     </header>
 
     <main id="main-content">
-        <section class="section pub-page" style="border-bottom: none;">
+        <section class="section" style="border-bottom: none;">
             <h2>Publications</h2>
 """
 
@@ -192,7 +192,7 @@ ES_HEADER = """\
     </header>
 
     <main id="main-content">
-        <section class="section pub-page" style="border-bottom: none;">
+        <section class="section" style="border-bottom: none;">
             <h2>Publicaciones</h2>
 """
 
@@ -228,7 +228,7 @@ MONTHS_ES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct
 
 
 def render_scholar_stats(stats, lang="en"):
-    """Render the Google Scholar citation card (inline on narrow screens, right margin on wide ones)."""
+    """Render the Google Scholar citation summary shown above the publication filters."""
     es = lang == "es"
     per_year = sorted((int(y), c) for y, c in stats["citations_per_year"].items())
     peak = max(c for _, c in per_year) or 1
@@ -247,30 +247,28 @@ def render_scholar_stats(stats, lang="en"):
 
     lines = [
         f'            <aside class="scholar-stats" aria-label="{t["aside"]}">',
-        '                <div class="scholar-card">',
-        f'                    <p class="scholar-title"><a href="{html.escape(stats["profile_url"])}" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>',
-        '                    <dl class="scholar-figures">',
-        f'                        <div><dt>{t["citations"]}</dt><dd>{fmt(stats["citations"])}</dd></div>',
-        f'                        <div><dt>h-index</dt><dd>{stats["h_index"]}</dd></div>',
-        f'                        <div><dt>i10-index</dt><dd>{stats["i10_index"]}</dd></div>',
-        '                    </dl>',
-        '                    <div class="scholar-chart">',
-        f'                        <p class="scholar-chart-label">{t["per_year"]}</p>',
-        f'                        <div class="scholar-bars" role="img" aria-label="{t["per_year"]}: {summary}">',
+        f'                <p class="scholar-title"><a href="{html.escape(stats["profile_url"])}" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>',
+        '                <dl class="scholar-figures">',
+        f'                    <div><dt>{t["citations"]}</dt><dd>{fmt(stats["citations"])}</dd></div>',
+        f'                    <div><dt>h-index</dt><dd>{stats["h_index"]}</dd></div>',
+        f'                    <div><dt>i10-index</dt><dd>{stats["i10_index"]}</dd></div>',
+        '                </dl>',
+        '                <div class="scholar-chart">',
+        f'                    <p class="scholar-chart-label">{t["per_year"]}</p>',
+        f'                    <div class="scholar-bars" role="img" aria-label="{t["per_year"]}: {summary}">',
     ]
     for y, c in per_year:
         height = "0" if c == 0 else f"max(2px, {c / peak * 100:.1f}%)"
         value = f'<span class="scholar-bar-value">{fmt(c)}</span>' if y == peak_year else ""
         lines.append(
-            f'                            <span class="scholar-col" data-tip="{y}: {fmt(c)}">'
+            f'                        <span class="scholar-col" data-tip="{y}: {fmt(c)}">'
             f'<span class="scholar-bar" style="height: {height}">{value}</span></span>'
         )
     lines += [
-        '                        </div>',
-        f'                        <div class="scholar-axis" aria-hidden="true"><span>{per_year[0][0]}</span><span>{per_year[-1][0]}</span></div>',
         '                    </div>',
-        f'                    <p class="scholar-updated">{t["updated"]}</p>',
+        f'                    <div class="scholar-axis" aria-hidden="true"><span>{per_year[0][0]}</span><span>{per_year[-1][0]}</span></div>',
         '                </div>',
+        f'                <p class="scholar-updated">{t["updated"]}</p>',
         '            </aside>\n',
     ]
     return "\n".join(lines)

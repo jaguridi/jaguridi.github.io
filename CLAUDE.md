@@ -96,7 +96,7 @@ For pieces José authored for broad audiences (blog posts, op-eds, essays).
 
 ## Google Scholar Stats
 
-The publications page (`publications.html`, `es/publications.html`) shows a Google Scholar card: total citations, h-index, i10-index, and a citations-per-year bar chart. On screens >= 1320px it sits in the right margin and stays in view while scrolling; on narrower screens it appears inline above the filters. The numbers live in `scholar_stats.json` and are rendered by `generate_html.py` — never edit the card in the HTML directly.
+The publications page (`publications.html`, `es/publications.html`) shows a Google Scholar summary in the page body, between the heading and the filters: total citations, h-index, i10-index, and a citations-per-year bar chart. No card or sidebar — José prefers the site without side cards. The numbers live in `scholar_stats.json` and are rendered by `generate_html.py` — never edit the block in the HTML directly.
 
 A local scheduled task (`weekly-scholar-stats`, Mondays 9:00) refreshes it automatically.
 

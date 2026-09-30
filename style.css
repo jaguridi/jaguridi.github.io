@@ -805,13 +805,8 @@ button:focus-visible {
     display: none;
 }
 
-/* Google Scholar citation card (publications page).
-   Inline above the filters by default; moves to the right margin on wide screens. */
+/* Google Scholar citation summary (publications page, above the filters) */
 .scholar-stats {
-    margin-bottom: 2rem;
-}
-
-.scholar-card {
     display: grid;
     grid-template-columns: auto minmax(12rem, 16rem);
     grid-template-areas:
@@ -820,10 +815,7 @@ button:focus-visible {
         "updated chart";
     column-gap: 2.5rem;
     align-items: start;
-    padding: 1rem 1.2rem;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    background: var(--color-bg);
+    margin-bottom: 2.2rem;
     font-size: 0.8rem;
     line-height: 1.4;
     color: var(--color-text-light);
@@ -960,38 +952,6 @@ button:focus-visible {
     font-variant-numeric: tabular-nums;
 }
 
-/* Wide screens: the card lives in the right margin and follows the reader down the list */
-@media (min-width: 1320px) {
-    .pub-page {
-        position: relative;
-    }
-
-    .scholar-stats {
-        position: absolute;
-        top: 3rem;
-        bottom: 3rem;
-        left: calc(100% + 3rem);
-        width: 13.5rem;
-        margin-bottom: 0;
-    }
-
-    .scholar-card {
-        position: sticky;
-        top: 5.5rem;
-        display: block;
-    }
-
-    .scholar-figures {
-        justify-content: space-between;
-        gap: 0.5rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .scholar-figures dd {
-        font-size: 1.35rem;
-    }
-}
-
 /* Responsive - Tablet */
 @media (max-width: 860px) {
     .nav-toggle {
@@ -1102,7 +1062,7 @@ button:focus-visible {
         flex-shrink: 0;
     }
 
-    .scholar-card {
+    .scholar-stats {
         grid-template-columns: 1fr;
         grid-template-areas:
             "title"
