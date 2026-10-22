@@ -316,6 +316,19 @@
     "url": null
   },
   {
+    "title": "IA en la administración pública: cómo decidir y organizar su uso",
+    "authors": [
+      "Jose A. Guridi"
+    ],
+    "venue": "Policy brief, UNESCO Office in San José & CILAC, 2026",
+    "venue_es": "Policy brief, Oficina de la UNESCO en San José y CILAC, 2026",
+    "year": 2026,
+    "publication_type": "policy-report",
+    "url": "https://unesdoc.unesco.org/ark:/48223/pf0000399851",
+    "open_access_url": "https://unesdoc.unesco.org/ark:/48223/pf0000399851",
+    "bibtex": "@techreport{guridi2026iaadministracion,\n  author = {Guridi, Jose A.},\n  title = {IA en la administración pública: cómo decidir y organizar su uso},\n  institution = {UNESCO Office in San José},\n  type = {Policy brief},\n  number = {CR/SC/2026/PI/02},\n  year = {2026},\n  url = {https://unesdoc.unesco.org/ark:/48223/pf0000399851}\n}"
+  },
+  {
     "title": "UNESCO Artificial Intelligence Readiness Assessment (RAM) Reports",
     "authors": [
       "Lead consultant for UNESCO"
