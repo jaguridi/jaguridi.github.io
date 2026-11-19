@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head><base href="/participation-atlas/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#172d49">
+  <title>Participation Atlas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="atlas.js" defer></script>
+</head>
+<body>
+  <header><div class="frame mast"><span class="brand"><i aria-hidden="true"></i>Participation Atlas</span><div class="commands"><button id="language"></button><button id="refresh"></button></div></div></header>
+  <main class="frame">
+    <section class="intro"><div><h1 id="heading"></h1><p id="subtitle"></p><div id="totals"></div></div><section id="chart" aria-live="polite"></section></section>
+    <form id="connect" hidden><label for="url" id="url-label"></label><input type="url" id="url" placeholder="https://docs.google.com/spreadsheets/d/…" required><button id="load"></button></form>
+    <div class="sync"><span id="status" role="status"></span><a id="sheet" target="_blank" rel="noreferrer" hidden></a></div>
+    <nav id="tabs" aria-label="Inventario"></nav>
+    <section class="workspace">
+      <aside><div class="filter-head"><h2 id="filters-label"></h2><button class="text-btn" id="clear"></button></div><div id="filters"></div></aside>
+      <section class="catalog"><div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search"></label><label><span class="sr" id="sort-label"></span><select id="sort"></select></label></div><div id="result-info" role="status"></div><div id="results"></div><button id="more" hidden></button></section>
+    </section>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><span id="kind"></span><button id="close" autofocus>×</button></div><article id="record"></article></dialog>
+</body></html>
