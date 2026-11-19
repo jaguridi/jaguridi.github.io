@@ -8,6 +8,10 @@
   <meta name="theme-color" content="#172d49">
   <title>Participation Atlas</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="analysis.css">
+  <script src="world.js" defer></script>
+  <script src="coding.js" defer></script>
+  <script src="analysis.js" defer></script>
   <script src="atlas.js" defer></script>
 </head>
 <body>
@@ -19,7 +23,7 @@
     <nav id="tabs" aria-label="Inventario"></nav>
     <section class="workspace">
       <aside><div class="filter-head"><h2 id="filters-label"></h2><button class="text-btn" id="clear"></button></div><div id="filters"></div></aside>
-      <section class="catalog"><div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search"></label><label><span class="sr" id="sort-label"></span><select id="sort"></select></label></div><div id="result-info" role="status"></div><div id="results"></div><button id="more" hidden></button></section>
+      <section class="catalog"><div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search"></label><label id="sort-wrap"><span class="sr" id="sort-label"></span><select id="sort"></select></label></div><div id="result-info" role="status"></div><section id="analysis" hidden></section><div id="results"></div><button id="more" hidden></button></section>
     </section>
   </main>
   <dialog id="detail"><div class="dialog-top"><span id="kind"></span><button id="close" autofocus>×</button></div><article id="record"></article></dialog>

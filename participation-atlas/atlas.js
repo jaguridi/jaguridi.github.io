@@ -191,6 +191,14 @@ function renderList(){
   const items=filtered(),all=data[view].length;
   chart(items);
   $('result-info').textContent=items.length+tr(' de ',' of ')+all+' '+label(view).toLowerCase();
+  $('analysis').hidden=!analysisOpen;
+  $('results').hidden=analysisOpen;
+  $('sort-wrap').hidden=analysisOpen;
+  if(analysisOpen){
+    $('more').hidden=true;
+    renderAnalysis(items);
+    return;
+  }
   const panel=$('results');panel.replaceChildren();
   items.slice(0,cap).forEach(item=>panel.append(card(item)));
   if(!items.length)panel.append(node('div',busy?tr('Cargando…','Loading…'):!fetched?tr('Conecta la planilla para explorar el inventario.','Connect the spreadsheet to explore the inventory.'):tr('Sin resultados. Prueba otra búsqueda o quita un filtro.','No matches. Try another search or clear a filter.'),'empty'));
@@ -199,6 +207,7 @@ function renderList(){
 }
 function render(){
   document.documentElement.lang=lang;
+  document.body.classList.toggle('analysis-mode',analysisOpen);
   $('heading').textContent=tr('IA para la participación pública','AI for public participation');
   $('subtitle').textContent=tr('Explora las herramientas que amplían la participación y la evidencia sobre cómo se usan.','Explore tools for scaling public participation and the evidence behind their use.');
   $('totals').replaceChildren(...['Tools','Sources'].map(k=>{const s=node('span');s.append(node('b',fetched?data[k].length:'—'),label(k).toLowerCase());return s;}));
@@ -210,7 +219,17 @@ function render(){
   $('sheet').hidden=!connected;$('sheet').textContent=tr('Abrir planilla ↗','Open spreadsheet ↗');$('sheet').href=base+sheetID+'/edit';
   const last=fetched?tr('Última lectura ','Last loaded ')+fetched.toLocaleTimeString(lang,{hour:'2-digit',minute:'2-digit'}):'';
   $('status').textContent=busy?tr('Leyendo Google Sheets…','Reading Google Sheets…'):failed?tr('Falló la lectura. Revisa la conexión y el acceso por enlace. ','Could not load. Check your connection and link access. ')+last:connected?last:tr('Abre el enlace completo del equipo o pega la URL de la planilla.','Open the full team link or paste the spreadsheet URL.');
-  $('tabs').replaceChildren(...['Tools','Sources'].map(k=>{const b=makeButton(label(k),()=>{view=k;cap=24;render();},view===k?'active':'');b.setAttribute('aria-pressed',String(view===k));return b;}));
+  $('tabs').replaceChildren(...['Tools','Sources','Analysis'].map(k=>{
+    const active=analysisOpen?k==='Analysis':view===k;
+    const title=k==='Analysis'?tr('Visualizaciones','Visualizations'):label(k);
+    const b=makeButton(title,()=>{
+      analysisOpen=k==='Analysis';view=analysisOpen?'Tools':k;cap=24;
+      const params=new URLSearchParams(location.hash.slice(1));
+      if(analysisOpen)params.set('view','analysis');else params.delete('view');
+      history.replaceState(null,'','#'+params);render();
+    },active?'active':'');
+    b.setAttribute('aria-pressed',String(active));return b;
+  }));
   $('filters-label').textContent=tr('Filtros','Filters');$('clear').textContent=tr('Limpiar','Clear');
   const search=tr('Buscar en ','Search ')+label(view).toLowerCase();
   $('search').placeholder=search;$('search').setAttribute('aria-label',search);$('search').value=state[view].query;
@@ -269,5 +288,12 @@ $('more').onclick=()=>{cap+=24;renderList();};
 $('close').onclick=()=>$('detail').close();
 $('detail').onclose=()=>{detail=null;};
 $('language').onclick=()=>{lang=tr('en','es');try{localStorage.setItem('atlas-language',lang);}catch{}render();};
+window.addEventListener('hashchange',()=>{
+  const params=new URLSearchParams(location.hash.slice(1));
+  if((params.get('sheet')||'')!==sheetID){location.reload();return;}
+  analysisOpen=params.get('view')==='analysis';
+  if(analysisOpen)view='Tools';
+  render();
+});
 render();refresh();
 setInterval(()=>{if(!document.hidden && !$('detail').open)refresh();},300000);
