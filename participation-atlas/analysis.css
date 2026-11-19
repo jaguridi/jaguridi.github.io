@@ -1,6 +1,21 @@
 .catalog{min-width:0}
 .lenses,.segmented,.map-legend,.coverage,.drill-title,.region-list{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
 .lenses{margin-bottom:14px}
+#tabs{flex-wrap:wrap}
+.lit-legend,.lit-refs,.coverage-items{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px}
+.lit-legend{margin:18px 0 8px}.lit-key{font-weight:600;font-size:14px}
+.lit-key:before{display:inline-block;content:"";width:10px;height:10px;border-radius:2px;margin-right:6px;background:#147967}
+.lit-key.others:before{background:#536f9b}
+.topic-line{display:grid;grid-template-columns:minmax(140px,33%) 1fr;gap:1px 15px;padding:9px 0;border-bottom:1px solid #e1e8ea;align-items:center}
+.topic-line h3{grid-row:span 2;font-size:15px;line-height:1.3;margin:0;font-weight:600}
+.topic-bar{display:grid;grid-template-columns:minmax(40px,1fr) 3em 4.4em;gap:7px;align-items:center;border:0;background:transparent;padding:4px 3px;color:var(--ink);text-align:right;font-size:13px}
+.topic-bar i{height:8px;background:#eaf0f1;border-radius:2px}.topic-bar em{display:block;height:100%;background:#147967;border-radius:2px}.topic-bar.others em{background:#536f9b}
+.topic-bar:hover,.topic-bar[aria-pressed=true],.lit-key[aria-pressed=true]{background:#e6f0f0}.topic-bar span{font-variant-numeric:tabular-nums;color:var(--muted)}
+.lit-refs{font-size:13px;margin-top:7px}.coverage-items{gap:6px}.literature-figure>h3{font-size:17px;margin:21px 0 9px}
+.reading-set{border-top:1px solid var(--rule);margin-top:22px;padding-top:16px}.reading-set h3{font:600 22px/1.25 Spectral,Georgia,serif;margin:0}.reading-study{margin:14px 0}
+.reading-study h4{font-size:15px;margin:0}.reading-study p,.reading-implication{font-size:15px;line-height:1.5;margin:5px 0;color:var(--ink);max-width:80ch}
+.reading-implication{background:#eff6f4;border-left:3px solid var(--teal);padding:10px 14px;margin:12px 0}
+@media(max-width:650px){.topic-line{grid-template-columns:1fr}.topic-line h3{grid-row:auto}.reading-set h3{font-size:19px}.lit-key{font-size:13px}.topic-bar{padding-inline:0}}
 .year-column .year-stack{display:flex;flex-direction:column-reverse;overflow:hidden}
 .year-stack em[data-type],.time-legend i[data-type]{display:block;background:#207d73}
 .year-stack em[data-type="Tested in a study or pilot"],.time-legend i[data-type="Tested in a study or pilot"]{background:#617db1}

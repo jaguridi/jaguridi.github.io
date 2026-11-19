@@ -1,5 +1,4 @@
 'use strict';
-let analysisOpen = new URLSearchParams(location.hash.slice(1)).get('view')==='analysis';
 let lens='time', clockBasis='use', selectedBucket=null;
 const compared=['',''];
 const profiles=new WeakMap();

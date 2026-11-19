@@ -48,7 +48,13 @@ const gid={Tools:102,Sources:103};
 const base='https://docs.google.com/spreadsheets/d/';
 const sheetID=new URLSearchParams(location.hash.slice(1)).get('sheet') || '';
 const connected=/^[a-zA-Z0-9_-]{20,120}$/.test(sheetID);
-let data={Tools:[],Sources:[]}, view='Tools', cap=24, busy=false, fetched=null, failed=false, detail=null;
+function tabFromUrl(){
+  const slug=new URLSearchParams(location.hash.slice(1)).get('view');
+  return ({analysis:'Analysis',literature:'Literature',sources:'Sources'})[slug] || 'Tools';
+}
+function tabDataset(tab){return tab==='Literature'||tab==='Sources'?'Sources':'Tools';}
+let activeTab=tabFromUrl();
+let data={Tools:[],Sources:[]}, view=tabDataset(activeTab), cap=24, busy=false, fetched=null, failed=false, detail=null;
 const context=()=>({query:'',sort:'sheet',filters:{}});
 const state={Tools:context(),Sources:context()};
 
@@ -191,12 +197,13 @@ function renderList(){
   const items=filtered(),all=data[view].length;
   chart(items);
   $('result-info').textContent=items.length+tr(' de ',' of ')+all+' '+label(view).toLowerCase();
-  $('analysis').hidden=!analysisOpen;
-  $('results').hidden=analysisOpen;
-  $('sort-wrap').hidden=analysisOpen;
-  if(analysisOpen){
+  const chartView=activeTab==='Analysis'||activeTab==='Literature';
+  $('analysis').hidden=!chartView;
+  $('results').hidden=chartView;
+  $('sort-wrap').hidden=chartView;
+  if(chartView){
     $('more').hidden=true;
-    renderAnalysis(items);
+    if(activeTab==='Literature')renderLiterature(items);else renderAnalysis(items);
     return;
   }
   const panel=$('results');panel.replaceChildren();
@@ -207,7 +214,7 @@ function renderList(){
 }
 function render(){
   document.documentElement.lang=lang;
-  document.body.classList.toggle('analysis-mode',analysisOpen);
+  document.body.classList.toggle('analysis-mode',activeTab==='Analysis'||activeTab==='Literature');
   $('heading').textContent=tr('IA para la participación pública','AI for public participation');
   $('subtitle').textContent=tr('Explora las herramientas que amplían la participación y la evidencia sobre cómo se usan.','Explore tools for scaling public participation and the evidence behind their use.');
   $('totals').replaceChildren(...['Tools','Sources'].map(k=>{const s=node('span');s.append(node('b',fetched?data[k].length:'—'),label(k).toLowerCase());return s;}));
@@ -219,13 +226,13 @@ function render(){
   $('sheet').hidden=!connected;$('sheet').textContent=tr('Abrir planilla ↗','Open spreadsheet ↗');$('sheet').href=base+sheetID+'/edit';
   const last=fetched?tr('Última lectura ','Last loaded ')+fetched.toLocaleTimeString(lang,{hour:'2-digit',minute:'2-digit'}):'';
   $('status').textContent=busy?tr('Leyendo Google Sheets…','Reading Google Sheets…'):failed?tr('Falló la lectura. Revisa la conexión y el acceso por enlace. ','Could not load. Check your connection and link access. ')+last:connected?last:tr('Abre el enlace completo del equipo o pega la URL de la planilla.','Open the full team link or paste the spreadsheet URL.');
-  $('tabs').replaceChildren(...['Tools','Sources','Analysis'].map(k=>{
-    const active=analysisOpen?k==='Analysis':view===k;
-    const title=k==='Analysis'?tr('Visualizaciones','Visualizations'):label(k);
+  $('tabs').replaceChildren(...['Tools','Sources','Analysis','Literature'].map(k=>{
+    const active=activeTab===k;
+    const title=k==='Literature'?tr('Literatura','Literature'):k==='Analysis'?tr('Visualizaciones','Visualizations'):label(k);
     const b=makeButton(title,()=>{
-      analysisOpen=k==='Analysis';view=analysisOpen?'Tools':k;cap=24;
+      activeTab=k;view=tabDataset(k);cap=24;
       const params=new URLSearchParams(location.hash.slice(1));
-      if(analysisOpen)params.set('view','analysis');else params.delete('view');
+      if(k==='Tools')params.delete('view');else params.set('view',k.toLowerCase());
       history.replaceState(null,'','#'+params);render();
     },active?'active':'');
     b.setAttribute('aria-pressed',String(active));return b;
@@ -291,8 +298,7 @@ $('language').onclick=()=>{lang=tr('en','es');try{localStorage.setItem('atlas-la
 window.addEventListener('hashchange',()=>{
   const params=new URLSearchParams(location.hash.slice(1));
   if((params.get('sheet')||'')!==sheetID){location.reload();return;}
-  analysisOpen=params.get('view')==='analysis';
-  if(analysisOpen)view='Tools';
+  activeTab=tabFromUrl();view=tabDataset(activeTab);
   render();
 });
 render();refresh();
