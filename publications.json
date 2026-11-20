@@ -280,16 +280,17 @@
     "url": null
   },
   {
-    "title": "Crises, deliberation, and STI policy in Chile: Can political unrest institutionalise participation?",
+    "title": "Crises, Deliberation, and Science, Technology and Innovation Policy in Chile: Can Political Unrest Institutionalise Participation?",
     "authors": [
-      "Inaki Goni",
+      "Iñaki Goñi",
       "Jose A. Guridi"
     ],
-    "venue": "In: Participatory and Deliberative practices in Techno-scientific Innovation for a better relationship between Science and Society (forthcoming)",
-    "venue_es": "En: Participatory and Deliberative practices in Techno-scientific Innovation for a better relationship between Science and Society (en prensa)",
-    "year": null,
+    "venue": "Chapter 7 in: Science, Society and Innovation: Participatory and Deliberative Practices in Techno-Scientific Changes, edited by G. Pellegrini and C. Piccolo, Vernon Press, 2027",
+    "venue_es": "Capítulo 7 en: Science, Society and Innovation: Participatory and Deliberative Practices in Techno-Scientific Changes, editado por G. Pellegrini y C. Piccolo, Vernon Press, 2027",
+    "year": 2027,
     "publication_type": "book-chapter",
-    "url": null
+    "url": "https://vernonpress.com/book/2626",
+    "bibtex": "@incollection{goni2027crises,\n  author = {Go{\\~n}i, I{\\~n}aki and Guridi, Jose A.},\n  title = {Crises, Deliberation, and Science, Technology and Innovation Policy in Chile: Can Political Unrest Institutionalise Participation?},\n  booktitle = {Science, Society and Innovation: Participatory and Deliberative Practices in Techno-Scientific Changes},\n  editor = {Pellegrini, G. and Piccolo, C.},\n  chapter = {7},\n  publisher = {Vernon Press},\n  year = {2027},\n  url = {https://vernonpress.com/book/2626}\n}"
   },
   {
     "title": "Natural Laboratories",
